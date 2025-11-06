@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공유 테스트 모음</title>
+    <title>공유 테스트 모음 - share.woojuya.co.kr</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1219204287783717"
+         crossorigin="anonymous"></script>
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -15,6 +25,7 @@
             align-items: center;
             padding: 20px;
         }
+        
         .container {
             background: white;
             border-radius: 20px;
@@ -23,14 +34,34 @@
             padding: 50px 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
+        
         h1 {
             text-align: center;
             color: #764ba2;
             margin-bottom: 40px;
             font-size: 2.5em;
         }
-        .test-list { list-style: none; }
-        .test-item { margin-bottom: 20px; }
+        
+        /* 광고 영역 */
+        .ad-container {
+            margin-bottom: 30px;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .test-list {
+            list-style: none;
+        }
+        
+        .test-item {
+            margin-bottom: 20px;
+        }
+        
         .test-link {
             display: block;
             padding: 25px;
@@ -44,16 +75,50 @@
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
+        
         .test-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
-        .emoji { font-size: 1.5em; margin-right: 10px; }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 40px 30px;
+            }
+            
+            .test-link {
+                font-size: 1.1em;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎯 게임 & 테스트 모음</h1>
+        <h1>🎯 공유 테스트 모음</h1>
+        
+        <!-- 상단 광고 -->
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1219204287783717"
+                 data-ad-slot="8717146857"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
         <ul class="test-list">
             <li class="test-item">
                 <a href="/love-test/" class="test-link">
