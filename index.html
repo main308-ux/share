@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공유 테스트 모음</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #764ba2;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .test-list { list-style: none; }
+        .test-item { margin-bottom: 20px; }
+        .test-link {
+            display: block;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .test-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .emoji { font-size: 1.5em; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 게임 & 테스트 모음</h1>
+        <ul class="test-list">
+            <li class="test-item">
+                <a href="/love-test/" class="test-link">
+                    <span class="emoji">💕</span>
+                    나의 연애 스타일 테스트
+                </a>
+            </li>
+            <li class="test-item">
+                <a href="/omok/" class="test-link">
+                    <span class="emoji">⚫</span>
+                    오목 게임
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
