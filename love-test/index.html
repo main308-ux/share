@@ -640,6 +640,13 @@
             if (sharedType && results[sharedType]) {
                 currentMBTI = sharedType;
                 document.getElementById('startScreen').style.display = 'none';
+                
+                // 공유 링크로 들어온 경우 중간 광고 섹션 제거 (중복 방지)
+                const adScreen = document.getElementById('adScreen');
+                if (adScreen) {
+                    adScreen.remove();
+                }
+                
                 displaySharedResult(sharedType);
             }
         });
@@ -730,9 +737,18 @@
             document.getElementById('resultScreen').classList.add('active');
             displayResult(mbti, result);
             
-            // 광고 로드
+            // 공유 링크로 들어온 경우 결과 광고 로드
             setTimeout(() => {
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                const resultAds = document.querySelectorAll('.result-ad-container .adsbygoogle');
+                resultAds.forEach((ad) => {
+                    if (!ad.dataset.adsbygoogleStatus) {
+                        try {
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        } catch (e) {
+                            console.log('Ad load attempt');
+                        }
+                    }
+                });
             }, 500);
         }
         
