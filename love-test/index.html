@@ -229,7 +229,7 @@
             color: #333;
         }
         
-        /* 전면 광고 오버레이 */
+        /* 전면 광고 오버레이 - 수정됨 */
         .ad-overlay {
             display: none;
             position: fixed;
@@ -241,7 +241,8 @@
             z-index: 99999;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto;
         }
         
         .ad-overlay.active {
@@ -249,23 +250,23 @@
             animation: fadeIn 0.3s;
         }
         
+        /* 광고 컨테이너 - 반응형으로 수정 */
         .ad-container {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            max-width: 90%;
-            width: 500px;
-            min-height: 400px;
+            padding: 20px;
+            max-width: 100%;
+            width: 100%;
+            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            gap: 20px;
         }
         
         .ad-message {
             text-align: center;
             color: #666;
-            margin-bottom: 20px;
             font-size: 1.1em;
         }
         
@@ -273,7 +274,18 @@
             font-size: 3em;
             color: #764ba2;
             font-weight: bold;
-            margin: 20px 0;
+        }
+        
+        /* 광고 영역 - 완전히 유연하게 수정 */
+        .ad-slot {
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         /* 공유 섹션 */
@@ -387,6 +399,18 @@
                 font-size: 1em;
                 padding: 15px;
             }
+            
+            .ad-container {
+                padding: 15px;
+            }
+            
+            .ad-countdown {
+                font-size: 2em;
+            }
+            
+            .ad-slot {
+                min-height: 200px;
+            }
         }
     </style>
 </head>
@@ -394,19 +418,18 @@
     <!-- 전면 광고 오버레이 -->
     <div class="ad-overlay" id="adOverlay">
         <div class="ad-container">
-            <div class="ad-message">공유 준비 중...</div>
+            <div class="ad-message">🎁 잠시만 기다려주세요...</div>
             <div class="ad-countdown" id="countdown">3</div>
             
-            <!-- 전면 광고 -->
-            <ins class="adsbygoogle"
-                 style="display:block; width:100%; min-height:250px;"
-                 data-ad-client="ca-pub-1219204287783717"
-                 data-ad-slot="2267160593"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <!-- 광고 슬롯 - 수정됨 -->
+            <div class="ad-slot">
+                <ins class="adsbygoogle"
+                     style="display:block; width:100%; height:100%;"
+                     data-ad-client="ca-pub-1219204287783717"
+                     data-ad-slot="2267160593"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
         </div>
     </div>
 
@@ -501,7 +524,7 @@
     </div>
 
     <script>
-        // 질문 데이터 (기존과 동일)
+        // 질문 데이터
         const questions = [
             {
                 question: "처음 만난 이성과의 데이트. 당신의 모습은?",
@@ -589,7 +612,7 @@
             }
         ];
 
-        // 16가지 결과 데이터 (기존과 동일)
+        // 16가지 결과 데이터
         const results = {
             "ESTJ": { emoji: "🦁", title: "든든한 사자형", description: "당신은 무리를 이끄는 사자처럼 강하고 책임감 있는 연애를 해요...", traits: { "사랑 스타일": "실질적이고 안정적", "다툴 때": "논리적으로 해결책 제시", "찰떡궁합": "🐨 포근한 코알라형", "데이트": "미리 짠 완벽한 코스" } },
             "ESFJ": { emoji: "🐶", title: "다정한 강아지형", description: "당신은 꼬리 치며 반겨주는 강아지처럼 따뜻하고 다정해요!...", traits: { "사랑 스타일": "배려 넘치는 다정함", "다툴 때": "공감하며 화해 추구", "찰떡궁합": "🦅 당당한 독수리형", "데이트": "함께 즐기는 활동" } },
@@ -716,6 +739,13 @@
         function showAdOverlay() {
             const overlay = document.getElementById('adOverlay');
             overlay.classList.add('active');
+            
+            // 광고 스크립트 실행
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('Ad loading:', e);
+            }
             
             let countdown = 3;
             const countdownEl = document.getElementById('countdown');
