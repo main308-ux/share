@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공유하기</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1219204287783717"
+         crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .countdown {
+            font-size: 3em;
+            color: #764ba2;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">💕</div>
+        <h1>공유 준비 중...</h1>
+        <p>잠시만 기다려주세요</p>
+        <div class="countdown" id="countdown">3</div>
+    </div>
+
+    <script>
+        const results = {
+            "ESTJ": { emoji: "🦁", title: "든든한 사자형" },
+            "ESFJ": { emoji: "🐶", title: "다정한 강아지형" },
+            "ISTJ": { emoji: "🐘", title: "성실한 코끼리형" },
+            "ISFJ": { emoji: "🐨", title: "포근한 코알라형" },
+            "ESTP": { emoji: "🐆", title: "짜릿한 치타형" },
+            "ESFP": { emoji: "🐬", title: "신나는 돌고래형" },
+            "ISTP": { emoji: "🐺", title: "쿨한 늑대형" },
+            "ISFP": { emoji: "🦌", title: "온화한 사슴형" },
+            "ENTJ": { emoji: "🦅", title: "당당한 독수리형" },
+            "ENFJ": { emoji: "🦋", title: "매력적인 나비형" },
+            "INTJ": { emoji: "🦉", title: "지혜로운 올빼미형" },
+            "INFJ": { emoji: "🦊", title: "신비로운 여우형" },
+            "INTP": { emoji: "🐱", title: "자유로운 고양이형" },
+            "INFP": { emoji: "🐰", title: "로맨틱 토끼형" },
+            "ENTP": { emoji: "🦊", title: "재치있는 여우형" },
+            "ENFP": { emoji: "🐵", title: "발랄한 원숭이형" }
+        };
+
+        // URL 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const mbtiType = urlParams.get('type');
+        const platform = urlParams.get('platform');
+
+        // 카운트다운
+        let countdown = 3;
+        const countdownEl = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownEl.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                executeShare();
+            }
+        }, 1000);
+
+        function executeShare() {
+            const baseUrl = window.location.origin + window.location.pathname.replace('share.html', '');
+            const shareUrl = baseUrl + '?type=' + mbtiType;
+            const result = results[mbtiType];
+
+            if (!result) {
+                window.location.href = baseUrl;
+                return;
+            }
+
+            if (platform === 'kakao') {
+                const shareText = `나는 ${result.emoji} ${result.title}!\n\n나의 연애 스타일 테스트 결과를 확인해보세요 💕`;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: '나의 연애 스타일 테스트',
+                        text: shareText,
+                        url: shareUrl
+                    }).then(() => {
+                        window.location.href = shareUrl;
+                    }).catch(() => {
+                        copyToClipboard(shareUrl);
+                        alert('링크가 복사되었어요! 카카오톡에서 공유해주세요 💕');
+                        window.location.href = shareUrl;
+                    });
+                } else {
+                    copyToClipboard(shareUrl);
+                    alert('링크가 복사되었어요! 카카오톡에서 공유해주세요 💕');
+                    window.location.href = shareUrl;
+                }
+            } else if (platform === 'facebook') {
+                const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+                window.open(facebookUrl, '_blank', 'width=600,height=400');
+                setTimeout(() => {
+                    window.location.href = shareUrl;
+                }, 1000);
+            } else if (platform === 'twitter') {
+                const shareText = `나는 ${result.emoji} ${result.title}!\n\n나의 연애 스타일은?`;
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+                window.open(twitterUrl, '_blank', 'width=600,height=400');
+                setTimeout(() => {
+                    window.location.href = shareUrl;
+                }, 1000);
+            } else if (platform === 'link') {
+                copyToClipboard(shareUrl);
+                alert('✅ 링크가 복사되었어요!');
+                window.location.href = shareUrl;
+            } else {
+                window.location.href = shareUrl;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+        }
+    </script>
+</body>
+</html>
