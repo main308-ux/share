@@ -690,17 +690,35 @@
         }
 
         function showAd() {
+            const adScreen = document.getElementById('adScreen');
+            
+            // 광고 화면이 없으면 그냥 다음 질문으로
+            if (!adScreen) {
+                showQuestion();
+                return;
+            }
+            
             document.getElementById('questionScreen').classList.remove('active');
-            document.getElementById('adScreen').classList.add('active');
+            adScreen.classList.add('active');
             
             // 광고 로드
-            (adsbygoogle = window.adsbygoogle || []).push({});
+            const adIns = adScreen.querySelector('.adsbygoogle');
+            if (adIns && !adIns.dataset.adsbygoogleStatus) {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch (e) {
+                    console.log('Ad loading...');
+                }
+            }
             
             adShown = true;
         }
 
         function continueAfterAd() {
-            document.getElementById('adScreen').classList.remove('active');
+            const adScreen = document.getElementById('adScreen');
+            if (adScreen) {
+                adScreen.classList.remove('active');
+            }
             document.getElementById('questionScreen').classList.add('active');
             showQuestion();
         }
@@ -825,6 +843,30 @@
             
             document.getElementById('resultScreen').classList.remove('active');
             document.getElementById('startScreen').style.display = 'block';
+            
+            // 중간 광고 화면이 제거되었다면 다시 생성
+            if (!document.getElementById('adScreen')) {
+                const adScreenHTML = `
+                    <div class="ad-screen" id="adScreen">
+                        <h3>🎯 잠깐! 광고 후 계속됩니다</h3>
+                        <p>테스트는 곧 이어집니다 😊</p>
+                        
+                        <div class="ad-container">
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:100%; min-height:250px;"
+                                 data-ad-client="ca-pub-1219204287783717"
+                                 data-ad-slot="2267160593"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                        </div>
+                        
+                        <button class="continue-btn" onclick="continueAfterAd()">계속하기 →</button>
+                    </div>
+                `;
+                
+                const resultScreen = document.getElementById('resultScreen');
+                resultScreen.insertAdjacentHTML('beforebegin', adScreenHTML);
+            }
             
             window.history.replaceState({}, '', window.location.pathname);
         }
