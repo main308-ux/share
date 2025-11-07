@@ -20,11 +20,15 @@
             width: 100vw !important;
             height: 100vh !important;
             overflow: hidden !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
         
         body {
             width: 100vw !important;
             height: 100vh !important;
+            padding: 0 !important;
+            margin: 0 !important;
             font-family: 'Segoe UI', Tahoma, sans-serif !important;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
             display: flex !important;
@@ -38,6 +42,10 @@
             overflow: hidden !important;
         }
         
+        body[style] {
+            padding: 0 !important;
+        }
+        
         .container {
             background: white !important;
             border-radius: 20px !important;
@@ -48,6 +56,7 @@
             text-align: center !important;
             position: relative !important;
             z-index: 10000 !important;
+            margin: 0 auto !important;
         }
         
         .emoji {
@@ -92,6 +101,21 @@
     </div>
 
     <script>
+        // 애드센스 padding 강제 제거!
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.style.padding = '0';
+            document.body.style.margin = '0';
+            document.documentElement.style.padding = '0';
+            document.documentElement.style.margin = '0';
+        });
+        
+        // 주기적으로 체크
+        setInterval(function() {
+            if (document.body.style.padding !== '0px' && document.body.style.padding !== '0') {
+                document.body.style.padding = '0';
+            }
+        }, 100);
+        
         const results = {
             "ESTJ": { emoji: "🦁", title: "든든한 사자형" },
             "ESFJ": { emoji: "🐶", title: "다정한 강아지형" },
