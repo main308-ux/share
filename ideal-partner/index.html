@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>찾았다 내 짝! 💘 나와 천생연분인 배우자는?</title>
     <meta property="og:title" content="찾았다 내 짝! 💘 나와 천생연분인 배우자는?" />
-    <meta property="og:description" content="18가지 질문으로 알아보는 나의 이상형 연예인! 지금 바로 테스트하고 친구들과 공유해보세요!" />
+    <meta property="og:description" content="간단한 질문으로 알아보는 나의 이상형 연예인! 지금 바로 테스트하고 친구들과 공유해보세요!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/main308-ux/share/main/ideal-partner/images/thumbnail.jpg" />
+    <meta property="og:url" content="https://main308-ux.github.io/share/ideal-partner/" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1219204287783717"
      crossorigin="anonymous"></script>
     <style>
@@ -482,7 +484,7 @@
                     </div>
                 </div>
                 
-                <button class="start-btn" onclick="startTest()">내 미래 배우자는 누구? 💘</button>
+                <button class="start-btn" onclick="startTest()">내 배우자 찾기 시작 💘</button>
                 <div id="errorMessage" class="error-message"></div>
             </div>
 
@@ -511,8 +513,21 @@
 
             <!-- 결과 화면 -->
             <div class="result-screen">
+                <div class="greeting" id="greeting" style="text-align: center; font-size: 20px; font-weight: bold; color: #764ba2; margin-bottom: 30px;"></div>
+                
+                <div class="celebrity-match">
+                    <h3 style="margin-bottom: 20px; color: #764ba2; font-size: 24px;">🎬 찾았다! 당신의 천생연분은...</h3>
+                    <div class="celebrity-image" id="celebrityImage"></div>
+                    <div class="celebrity-name" id="celebrityName"></div>
+                    <div class="result-description" id="celebrityDescription"></div>
+                    
+                    <div class="result-detail" style="margin-top: 25px;">
+                        <h4>💕 궁합 포인트</h4>
+                        <p id="compatibility"></p>
+                    </div>
+                </div>
+
                 <div class="result-card">
-                    <div class="greeting" id="greeting"></div>
                     <div class="result-type" id="resultType"></div>
                     <div class="result-title" id="resultTitle"></div>
                     <div class="trait-tags" id="traitTags"></div>
@@ -531,18 +546,6 @@
                     <div class="result-detail">
                         <h4>⚠️ 주의할 점</h4>
                         <p id="caution"></p>
-                    </div>
-                </div>
-
-                <div class="celebrity-match">
-                    <h3 style="margin-bottom: 20px; color: #764ba2; font-size: 24px;">🎬 찾았다! 당신의 천생연분은...</h3>
-                    <div class="celebrity-image" id="celebrityImage"></div>
-                    <div class="celebrity-name" id="celebrityName"></div>
-                    <div class="result-description" id="celebrityDescription"></div>
-                    
-                    <div class="result-detail" style="margin-top: 25px;">
-                        <h4>💕 궁합 포인트</h4>
-                        <p id="compatibility"></p>
                     </div>
                 </div>
 
@@ -1040,7 +1043,12 @@
         }
 
         function shareKakao() {
-            alert('카카오톡 공유 기능은 실제 웹사이트에 배포 후 Kakao Developers에서 설정하실 수 있습니다!\n\n지금은 링크 복사 기능을 이용해주세요 😊');
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('찾았다 내 짝! 💘 나와 천생연분인 배우자는?');
+            
+            // 모바일에서 카카오톡 앱 직접 열기
+            const kakaoUrl = `https://sharer.kakao.com/talk/friends/?url=${url}&text=${text}`;
+            window.location.href = kakaoUrl;
         }
 
         function shareFacebook() {
