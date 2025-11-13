@@ -1043,12 +1043,43 @@
         }
 
         function shareKakao() {
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent('찾았다 내 짝! 💘 나와 천생연분인 배우자는?');
+            const mbti = document.getElementById('resultType').textContent;
+            const celebrity = document.getElementById('celebrityName').textContent;
+            const baseUrl = window.location.origin + window.location.pathname;
+            const shareUrl = baseUrl + '?result=' + mbti;
+            const shareText = `나의 천생연분은 ${celebrity}! 💘\n나는 ${mbti} 유형!\n\n찾았다 내 짝! 테스트 결과를 확인해보세요 ✨`;
             
-            // 모바일에서 카카오톡 앱 직접 열기
-            const kakaoUrl = `https://sharer.kakao.com/talk/friends/?url=${url}&text=${text}`;
-            window.location.href = kakaoUrl;
+            // 네이티브 공유 API 사용 (모바일 최적화)
+            if (navigator.share) {
+                navigator.share({
+                    title: '찾았다 내 짝! 💘',
+                    text: shareText,
+                    url: shareUrl
+                }).catch((error) => {
+                    // 공유 취소 또는 실패 시 링크 복사
+                    copyToClipboard(shareUrl);
+                    alert('링크가 복사되었습니다! 🎉\n카카오톡에서 친구들에게 공유해보세요!');
+                });
+            } else {
+                // 네이티브 공유 API 미지원 시 링크 복사
+                copyToClipboard(shareUrl);
+                alert('링크가 복사되었습니다! 🎉\n카카오톡에서 친구들에게 공유해보세요!');
+            }
+        }
+        
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
         }
 
         function shareFacebook() {
@@ -1066,16 +1097,8 @@
 
         function copyLink() {
             const url = window.location.href;
-            
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(url).then(() => {
-                    alert('링크가 복사되었습니다! 🎉\n친구들에게 공유해보세요!');
-                }).catch(() => {
-                    fallbackCopyTextToClipboard(url);
-                });
-            } else {
-                fallbackCopyTextToClipboard(url);
-            }
+            copyToClipboard(url);
+            alert('링크가 복사되었습니다! 🎉\n친구들에게 공유해보세요!');
         }
 
         function fallbackCopyTextToClipboard(text) {
@@ -1090,9 +1113,8 @@
             
             try {
                 document.execCommand('copy');
-                alert('링크가 복사되었습니다! 🎉\n친구들에게 공유해보세요!');
             } catch (err) {
-                alert('링크 복사에 실패했습니다. 주소창의 URL을 직접 복사해주세요.');
+                console.error('복사 실패:', err);
             }
             
             document.body.removeChild(textArea);
