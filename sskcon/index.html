@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025 성시경 연말 콘서트 《성시경》 예매</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1219204287783717"
+     crossorigin="anonymous"></script>
     <style>
         * {
             margin: 0;
@@ -155,44 +157,81 @@
 
         .btn-container {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 10px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 18px 40px;
-            font-size: 1.2em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            padding: 20px 45px;
+            font-size: 1.3em;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             border: none;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
-            background: white;
-            color: #667eea;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-2px) scale(1.02);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            border: 2px solid white;
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: #667eea;
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(79, 172, 254, 0.6);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
         }
 
         .notice {
@@ -228,9 +267,16 @@
                 padding: 30px 20px;
             }
 
+            .btn-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
             .btn {
-                padding: 15px 30px;
-                font-size: 1em;
+                width: 100%;
+                min-width: auto;
+                padding: 18px 30px;
+                font-size: 1.1em;
             }
         }
     </style>
@@ -253,10 +299,10 @@
                 </div>
                 <div class="btn-container">
                     <a href="https://tickets.interpark.com/goods/25016342" class="btn btn-primary">
-                        티켓 예매 바로가기
+                        <span>티켓 예매 바로가기</span>
                     </a>
                     <a href="https://tickets.interpark.com/goods/25016342" class="btn btn-secondary">
-                        오시는 길
+                        <span>오시는 길</span>
                     </a>
                 </div>
             </div>
