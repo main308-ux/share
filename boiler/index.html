@@ -14,21 +14,19 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
             background: white;
             border-radius: 20px;
-            padding: 40px;
-            max-width: 800px;
+            padding: 40px 30px;
+            max-width: 500px;
             width: 100%;
+            margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
@@ -36,331 +34,111 @@
             text-align: center;
             color: #333;
             margin-bottom: 15px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
+            line-height: 1.4;
         }
 
         .subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 40px;
-            font-size: 16px;
+            margin-bottom: 30px;
+            font-size: 15px;
             line-height: 1.6;
         }
 
         .button-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .brand-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 25px 20px;
-            border-radius: 15px;
-            font-size: 18px;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-size: 17px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             text-decoration: none;
+            text-align: center;
         }
 
         .brand-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
         }
 
         .brand-button:active {
-            transform: translateY(-2px);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 700px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            animation: slideUp 0.3s ease;
-            position: relative;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 20px;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #333;
-        }
-
-        .modal-header {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .modal-header h2 {
-            color: #667eea;
-            font-size: 24px;
-            margin-top: 10px;
-        }
-
-        .modal-body h3 {
-            color: #333;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .modal-body p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .modal-body ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .modal-body li {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background: linear-gradient(to top, #fff3cd 50%, transparent 50%);
-            font-weight: 600;
-            padding: 2px 0;
+            transform: translateY(-1px);
         }
 
         .tip-box {
             background-color: #f8f9fa;
             border-left: 4px solid #667eea;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+            padding: 15px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
         }
 
         .tip-box strong {
             color: #667eea;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
             .container {
-                padding: 25px;
+                padding: 30px 20px;
+                border-radius: 16px;
             }
 
             h1 {
-                font-size: 24px;
+                font-size: 20px;
             }
 
-            .button-grid {
-                grid-template-columns: 1fr;
+            .subtitle {
+                font-size: 14px;
             }
 
-            .modal-content {
-                padding: 25px;
-                margin: 10% auto;
+            .brand-button {
+                padding: 16px 18px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔥 제조사별 난방비 아끼는 보일러 설정법</h1>
+        <h1>🔥 제조사별 난방비 아끼는<br>보일러 설정법</h1>
         <p class="subtitle">
             우리집 보일러 제조사를 선택하시면<br>
             맞춤형 난방비 절약 설정 방법을 확인하실 수 있습니다
         </p>
 
         <div class="button-grid">
-            <a href="https://woojuya.co.kr/%ea%b2%bd%eb%8f%99%eb%82%98%eb%b9%84%ec%97%94-%eb%b3%b4%ec%9d%bc%eb%9f%ac-%ea%b2%a8%ec%9a%b8%ec%b2%a0-%eb%82%9c%eb%b0%a9%eb%b9%84-%ec%a0%88%ec%95%bd-%ec%84%a4%ec%a0%95-%eb%b0%a9%eb%b2%95/" target="_blank" class="brand-button">경동나비엔</a>
-            <a href="https://krb.co.kr/download" target="_blank" class="brand-button">귀뚜라미</a>
-            <a href="https://woojuya.co.kr/%eb%a6%b0%eb%82%98%ec%9d%b4-%eb%b3%b4%ec%9d%bc%eb%9f%ac-%eb%82%9c%eb%b0%a9%eb%b9%84-%ec%95%84%eb%81%bc%eb%8a%94-%ec%84%a4%ec%a0%95%eb%b2%95/" target="_blank" class="brand-button">린나이</a>
-            <a href="https://www.celtic.co.kr/mobile/?act=board&bbs_code=controller" target="_blank" class="brand-button">대성셀틱</a>
+            <a href="https://woojuya.co.kr/%ea%b2%bd%eb%8f%99%eb%82%98%eb%b9%84%ec%97%94-%eb%b3%b4%ec%9d%bc%eb%9f%ac-%ea%b2%a8%ec%9a%b8%ec%b2%a0-%eb%82%9c%eb%b0%a9%eb%b9%84-%ec%a0%88%ec%95%bd-%ec%84%a4%ec%a0%95-%eb%b0%a9%eb%b2%95/" class="brand-button">경동나비엔</a>
+            <a href="https://krb.co.kr/download" class="brand-button">귀뚜라미</a>
+            <a href="https://woojuya.co.kr/%eb%a6%b0%eb%82%98%ec%9d%b4-%eb%b3%b4%ec%9d%bc%eb%9f%ac-%eb%82%9c%eb%b0%a9%eb%b9%84-%ec%95%84%eb%81%bc%eb%8a%94-%ec%84%a4%ec%a0%95%eb%b2%95/" class="brand-button">린나이</a>
+            <a href="https://www.celtic.co.kr/mobile/?act=board&bbs_code=controller" class="brand-button">대성셀틱</a>
         </div>
 
         <div class="tip-box">
-            <strong>💡 공통 절약 팁:</strong> 모든 제조사 공통으로 온수 온도는 '중'으로, 외출 시에는 외출모드 대신 평소보다 3-5도 낮게 설정하세요!
+            <strong>💡 공통 절약 팁</strong>
+            모든 제조사 공통으로 온수 온도는 '중'으로, 외출 시에는 외출모드 대신 평소보다 3-5도 낮게 설정하세요!
         </div>
     </div>
-
-    <!-- Modal -->
-    <div id="brandModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-            </div>
-            <div class="modal-body" id="modalBody"></div>
-        </div>
-    </div>
-
-    <script>
-        const brandInfo = {
-            '경동나비엔': {
-                content: `
-                    <h3>🎯 기본 설정 방법</h3>
-                    <p><span class="highlight">실내온도 조절방식</span>을 선택하면 가장 효율적입니다. 리모컨의 '설정' 버튼을 3초간 눌러 조절방식을 변경할 수 있습니다.</p>
-                    
-                    <h3>🌡️ 온도 설정 가이드</h3>
-                    <ul>
-                        <li><strong>실내온도:</strong> 22-24도 권장 (센서가 실내온도 감지)</li>
-                        <li><strong>온돌온도:</strong> 55-60도 권장 (바닥 복사열 이용)</li>
-                        <li><strong>온수온도:</strong> 45-50도면 충분 ('고' 설정 시 70도로 낭비)</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <strong>💰 절약 팁:</strong> '예약기능'을 활용해 새벽 3시~6시는 난방을 끄고, 기상 1시간 전부터 다시 작동되도록 설정하세요. 월 2-3만원 절약됩니다.
-                    </div>
-
-                    <h3>⚙️ 외출 시 설정</h3>
-                    <p>2-3일 외출: 외출모드 대신 <span class="highlight">평소 온도에서 -5도</span> 낮춰서 설정하세요. 집이 완전히 식으면 다시 데우는데 엄청난 가스비가 듭니다.</p>
-                `
-            },
-            '귀뚜라미': {
-                content: `
-                    <h3>🎯 스마트 절약 모드 활용</h3>
-                    <p>귀뚜라미 보일러는 <span class="highlight">'절약모드'</span> 기능이 탑재되어 있습니다. 리모컨에서 '절약' 버튼을 누르면 자동으로 효율적인 온도로 조절됩니다.</p>
-                    
-                    <h3>🌡️ 권장 온도 설정</h3>
-                    <ul>
-                        <li><strong>실내온도 모드:</strong> 23도 설정 권장</li>
-                        <li><strong>온돌온도 모드:</strong> 60도 설정 권장</li>
-                        <li><strong>온수:</strong> 중간(약 45도)으로 설정</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <strong>💰 절약 팁:</strong> '절약모드' + '예약기능' 병행 사용 시 최대 30% 난방비 절감 효과가 있습니다. 심야시간대 예약 설정을 적극 활용하세요.
-                    </div>
-
-                    <h3>📱 스마트 제어</h3>
-                    <p>귀뚜라미 앱을 설치하면 외부에서도 보일러 제어가 가능합니다. 퇴근 30분 전 미리 난방을 켜면 효율적입니다.</p>
-                `
-            },
-            '린나이': {
-                content: `
-                    <h3>🎯 ECO 모드 필수 활성화</h3>
-                    <p>린나이 보일러의 <span class="highlight">'ECO 버튼'</span>을 꼭 눌러주세요. 이 기능만 활성화해도 약 15-20% 에너지 절감 효과가 있습니다.</p>
-                    
-                    <h3>🌡️ 최적 온도 가이드</h3>
-                    <ul>
-                        <li><strong>난방:</strong> 실온 22도 또는 온돌 55도</li>
-                        <li><strong>온수:</strong> 45도 (여름철 40도로 낮춰도 무방)</li>
-                        <li><strong>동파방지:</strong> 영하 10도 이하 시 자동 작동</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <strong>💰 절약 팁:</strong> 린나이의 '온수우선' 기능을 끄세요. 이 기능이 켜져있으면 온수 사용 시 난방이 중단되었다가 다시 가열하느라 가스비가 더 나옵니다.
-                    </div>
-
-                    <h3>⏰ 타이머 설정법</h3>
-                    <p>주간/야간 온도를 다르게 설정할 수 있습니다. 취침 시간(밤 11시~아침 6시)은 20도로, 활동 시간은 23도로 설정하세요.</p>
-                `
-            },
-            '대성셀틱': {
-                content: `
-                    <h3>🎯 에너지세이빙 기능 활용</h3>
-                    <p>대성셀틱은 <span class="highlight">'에너지세이빙 모드'</span>가 우수합니다. 설정 메뉴에서 활성화하면 자동으로 최적 연소 효율을 유지합니다.</p>
-                    
-                    <h3>🌡️ 온도 설정 가이드</h3>
-                    <ul>
-                        <li><strong>표준 난방:</strong> 실내 23도 권장</li>
-                        <li><strong>바닥 난방:</strong> 58-60도 적정</li>
-                        <li><strong>온수:</strong> 여름 40도, 겨울 45도</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <strong>💰 절약 팁:</strong> 대성셀틱의 '간헐난방 기능'을 활용하세요. 1시간 작동 후 30분 휴지 패턴으로 설정하면 체감온도는 유지하면서 가스비는 25% 절감됩니다.
-                    </div>
-
-                    <h3>🔧 정기 점검 사항</h3>
-                    <p>연 1회 필터 청소와 배관 점검을 하면 효율이 10-15% 향상됩니다. 리모컨에 '점검' 알림이 뜨면 꼭 A/S를 받으세요.</p>
-                `
-            }
-        };
-
-        function openModal(brand) {
-            const modal = document.getElementById('brandModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = brand + ' 보일러 난방비 절약 설정법';
-            modalBody.innerHTML = brandInfo[brand].content;
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('brandModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // 모달 외부 클릭 시 닫기
-        window.onclick = function(event) {
-            const modal = document.getElementById('brandModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        // ESC 키로 모달 닫기
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
