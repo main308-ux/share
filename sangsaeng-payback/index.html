@@ -318,20 +318,8 @@
         }
 
         .ad-container {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            margin: 25px 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .ad-label {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.7rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 40px 0;
+            width: 100%;
         }
 
         .info-section {
@@ -404,73 +392,85 @@
             }
 
             h1 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .info-badge {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 20px 25px;
+                gap: 16px;
+            }
+
+            .btn-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .btn-title {
+                font-size: 1.15rem;
+            }
+
+            .btn-desc {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
             }
 
             .subtitle {
                 font-size: 0.95rem;
             }
 
+            .info-badge {
+                font-size: 0.85rem;
+                padding: 7px 18px;
+            }
+
             .btn {
-                padding: 18px 22px;
-                gap: 15px;
+                padding: 18px 20px;
+                gap: 14px;
             }
 
             .btn-icon {
                 width: 46px;
                 height: 46px;
                 font-size: 1.4rem;
-            }
-
-            .btn-title {
-                font-size: 1.05rem;
-            }
-
-            .btn-desc {
-                font-size: 0.78rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.45rem;
-            }
-
-            .info-badge {
-                font-size: 0.8rem;
-                padding: 6px 16px;
-            }
-
-            .btn {
-                padding: 16px 18px;
-                gap: 12px;
-            }
-
-            .btn-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 1.2rem;
                 border-radius: 12px;
             }
 
             .btn-title {
-                font-size: 0.98rem;
+                font-size: 1.1rem;
             }
 
             .btn-desc {
-                font-size: 0.73rem;
+                font-size: 0.82rem;
             }
 
             .btn-arrow {
-                display: none;
+                font-size: 1.2rem;
             }
 
             .info-section {
-                padding: 20px;
+                padding: 22px;
+            }
+
+            .info-section h2 {
+                font-size: 1.05rem;
             }
 
             .info-section p {
-                font-size: 0.85rem;
+                font-size: 0.88rem;
             }
         }
 
@@ -502,21 +502,6 @@
         <h1>상생페이백 신청방법</h1>
         <p class="subtitle">카드 소비 증가분의 20%를 디지털 온누리상품권으로 환급받으세요</p>
         <span class="info-badge" role="status">🎁 최대 30만원 환급 | 신청기간: ~11.30</span>
-
-        <!-- 상단 광고 -->
-        <aside class="ad-container" aria-label="광고">
-            <div class="ad-label">광고</div>
-            <!-- share.woojuya.co.kr -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1219204287783717"
-                 data-ad-slot="2267160593"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </aside>
 
         <nav class="button-container" aria-label="상생페이백 바로가기 메뉴">
             <a href="https://xn--3h3bl7foc243a8lq.kr/" class="btn btn-apply" title="상생페이백 공식 홈페이지에서 신청하기" aria-label="상생페이백 신청 페이지로 이동">
@@ -566,10 +551,8 @@
             <p>월 최대 10만원, 3개월간 최대 30만원까지 디지털 온누리상품권으로 지급됩니다. 지급일은 매월 15일입니다.</p>
         </article>
 
-        <!-- 하단 광고 -->
+        <!-- 하단 광고 (자연스럽게 배치) -->
         <aside class="ad-container" aria-label="광고">
-            <div class="ad-label">광고</div>
-            <!-- share.woojuya.co.kr -->
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-1219204287783717"
