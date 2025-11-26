@@ -635,19 +635,19 @@
         <section class="share-section" aria-label="공유하기">
             <p class="share-title">📢 이 정보가 도움이 되셨다면 공유해주세요!</p>
             <div class="share-buttons">
-                <a href="javascript:void(0);" onclick="shareKakao()" class="share-btn" title="카카오톡 공유" aria-label="카카오톡으로 공유하기">
+                <button onclick="shareKakao()" class="share-btn" title="카카오톡 공유" aria-label="카카오톡으로 공유하기">
                     <img src="https://share.woojuya.co.kr/kakao.png" alt="카카오톡">
-                </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://share.woojuya.co.kr/government-support/" target="_blank" rel="noopener" class="share-btn" title="페이스북 공유" aria-label="페이스북으로 공유하기">
+                </button>
+                <button onclick="shareFacebook()" class="share-btn" title="페이스북 공유" aria-label="페이스북으로 공유하기">
                     <img src="https://share.woojuya.co.kr/facebook.png" alt="페이스북">
-                </a>
-                <a href="https://twitter.com/intent/tweet?text=대한민국 정부지원금 한눈에 보기&url=https://share.woojuya.co.kr/government-support/" target="_blank" rel="noopener" class="share-btn" title="X(트위터) 공유" aria-label="X로 공유하기">
+                </button>
+                <button onclick="shareTwitter()" class="share-btn" title="X(트위터) 공유" aria-label="X로 공유하기">
                     <img src="https://share.woojuya.co.kr/x.png" alt="X(트위터)">
-                </a>
-                <a href="https://social-plugins.line.me/lineit/share?url=https://share.woojuya.co.kr/government-support/" target="_blank" rel="noopener" class="share-btn" title="라인 공유" aria-label="라인으로 공유하기">
+                </button>
+                <button onclick="shareLine()" class="share-btn" title="라인 공유" aria-label="라인으로 공유하기">
                     <img src="https://share.woojuya.co.kr/line.png" alt="라인">
-                </a>
-                <button onclick="copyURL()" class="share-btn" title="링크 복사" aria-label="링크 복사하기">
+                </button>
+                <button onclick="copyLink()" class="share-btn" title="링크 복사" aria-label="링크 복사하기">
                     <img src="https://share.woojuya.co.kr/link-copy.png" alt="링크 복사">
                 </button>
             </div>
@@ -675,82 +675,98 @@
     <!-- 토스트 메시지 -->
     <div id="toast" class="toast">링크가 복사되었습니다!</div>
 
-    <!-- 카카오 SDK -->
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.5.0/kakao.min.js" crossorigin="anonymous"></script>
     <script>
-        // 카카오 SDK 초기화 (본인의 JavaScript 키로 변경 필요)
-        // Kakao.init('YOUR_KAKAO_JAVASCRIPT_KEY');
+        const pageUrl = 'https://share.woojuya.co.kr/government-support/';
+        const pageTitle = '대한민국 정부지원금 한눈에 보기';
+        const pageDesc = '청년, 결혼, 출산육아, 노인, 소상공인 등 맞춤형 복지혜택 총정리 ✨';
 
-        // 카카오톡 공유
+        // 카카오톡 공유 (네이티브 공유 API 우선)
         function shareKakao() {
-            if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
-                Kakao.Share.sendDefault({
-                    objectType: 'feed',
-                    content: {
-                        title: '대한민국 정부지원금 한눈에 보기',
-                        description: '청년, 결혼, 출산육아, 노인, 소상공인 등 맞춤형 복지혜택 총정리',
-                        imageUrl: 'https://share.woojuya.co.kr/images/og-default.jpg',
-                        link: {
-                            mobileWebUrl: 'https://share.woojuya.co.kr/government-support/',
-                            webUrl: 'https://share.woojuya.co.kr/government-support/',
-                        },
-                    },
-                    buttons: [
-                        {
-                            title: '자세히 보기',
-                            link: {
-                                mobileWebUrl: 'https://share.woojuya.co.kr/government-support/',
-                                webUrl: 'https://share.woojuya.co.kr/government-support/',
-                            },
-                        },
-                    ],
+            const shareText = `${pageTitle} 💰\n${pageDesc}\n\n나에게 맞는 정부지원금을 확인해보세요!`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: pageTitle,
+                    text: shareText,
+                    url: pageUrl
+                }).catch(() => {
+                    copyToClipboard(pageUrl);
+                    showToast('링크가 복사되었습니다! 카카오톡에서 공유해보세요 💬');
                 });
             } else {
-                // SDK 미초기화 시 카카오스토리 공유
-                const url = encodeURIComponent('https://share.woojuya.co.kr/government-support/');
-                window.open(`https://story.kakao.com/share?url=${url}`, '_blank', 'width=600,height=400');
+                copyToClipboard(pageUrl);
+                showToast('링크가 복사되었습니다! 카카오톡에서 공유해보세요 💬');
             }
         }
 
-        // URL 복사
-        function copyURL() {
-            const url = 'https://share.woojuya.co.kr/government-support/';
-            
+        // 페이스북 공유
+        function shareFacebook() {
+            const url = encodeURIComponent(pageUrl);
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // X(트위터) 공유
+        function shareTwitter() {
+            const text = encodeURIComponent(`${pageTitle} 💰 ${pageDesc}`);
+            const url = encodeURIComponent(pageUrl);
+            const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // 라인 공유
+        function shareLine() {
+            const text = encodeURIComponent(`${pageTitle}\n${pageDesc}`);
+            const url = encodeURIComponent(pageUrl);
+            const shareUrl = `https://social-plugins.line.me/lineit/share?url=${url}&text=${text}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // 링크 복사
+        function copyLink() {
+            copyToClipboard(pageUrl);
+            showToast('링크가 복사되었습니다! 🎉');
+        }
+
+        // 클립보드 복사 함수
+        function copyToClipboard(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(url).then(() => {
-                    showToast();
-                }).catch(() => {
-                    fallbackCopy(url);
+                navigator.clipboard.writeText(text).catch(() => {
+                    fallbackCopyTextToClipboard(text);
                 });
             } else {
-                fallbackCopy(url);
+                fallbackCopyTextToClipboard(text);
             }
         }
 
         // 폴백 복사 방식
-        function fallbackCopy(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.left = '-9999px';
-            document.body.appendChild(textarea);
-            textarea.select();
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '-999999px';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
             try {
                 document.execCommand('copy');
-                showToast();
             } catch (err) {
-                alert('링크: ' + text);
+                console.error('복사 실패:', err);
             }
-            document.body.removeChild(textarea);
+            
+            document.body.removeChild(textArea);
         }
 
         // 토스트 메시지 표시
-        function showToast() {
+        function showToast(message) {
             const toast = document.getElementById('toast');
+            toast.textContent = message || '링크가 복사되었습니다!';
             toast.classList.add('show');
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 2000);
+            }, 2500);
         }
     </script>
 </body>
