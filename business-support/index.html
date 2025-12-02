@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 소상공인 정부 지원 정책 (최신 업데이트)</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            padding: 40px 0 !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 40px 40px 40px !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .policy-card.new {
+            border: 2px solid #ff6b6b !important;
+        }
+        
+        .policy-card.new::after {
+            content: 'NEW' !important;
+            position: absolute !important;
+            top: 15px !important;
+            right: 15px !important;
+            background: #ff6b6b !important;
+            color: white !important;
+            padding: 5px 12px !important;
+            border-radius: 20px !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #2c3e50 !important;
+            color: white !important;
+            padding: 40px !important;
+            margin: 0 !important;
+            text-align: center !important;
+        }
+        
+        .footer h3 {
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.5rem !important;
+            color: white !important;
+        }
+        
+        .footer p {
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            opacity: 0.9 !important;
+            color: white !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #2196f3 !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #1976d2 !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #2196f3 !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .update-badge {
+            display: inline-block !important;
+            background: #4CAF50 !important;
+            color: white !important;
+            padding: 4px 12px !important;
+            border-radius: 15px !important;
+            font-size: 0.85rem !important;
+            margin: 0 0 20px 0 !important;
+            font-weight: 600 !important;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-grid {
+                grid-template-columns: 1fr !important;
+                padding: 20px !important;
+            }
+            
+            .intro, .notice {
+                padding: 30px 20px !important;
+                margin: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <span class="update-badge">2025년 10월 30일 업데이트</span>
+            <h2>소상공인 여러분의 성공적인 경영을 지원합니다</h2>
+            <p>
+                2025년 정부는 소상공인을 위해 총 5.4조원 규모의 지원 예산을 편성했습니다. 
+                금융 부담 완화부터 디지털 전환, 채무 조정, 고효율 기기 지원까지 실질적인 도움을 받을 수 있는 
+                다양한 정책을 준비했습니다. 지금 바로 확인하고 신청하세요!
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>📌 신청 전 확인사항</h4>
+            <ul>
+                <li>대부분의 지원사업은 예산 소진 시 조기 마감될 수 있습니다</li>
+                <li>지원 대상 및 요건은 정책별로 상이하니 꼭 확인하세요</li>
+                <li>중복 신청이 가능한 정책도 있으니 여러 혜택을 함께 받으세요</li>
+                <li>문의사항은 중소기업통합콜센터(1357)로 연락하세요</li>
+            </ul>
+        </div>
+        
+        <div class="policy-grid">
+            <!-- 민생회복 소비쿠폰 (신규 추가) -->
+            <div class="policy-card new">
+                <h3>💰 민생회복 소비쿠폰</h3>
+                <p>
+                    전 국민 대상으로 최소 15만원에서 최대 55만원의 소비쿠폰을 지급합니다. 
+                    소상공인 매장에서 사용 가능하여 지역 경제 활성화에 기여합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 1인당 15~55만원 (지역·소득별 차등)<br>
+                    <strong>1차 지급:</strong> 15~45만원 (전 국민)<br>
+                    <strong>2차 지급:</strong> 10만원 추가 (소득 하위 90%)<br>
+                    <strong>사용기한:</strong> 2025년 11월 30일까지<br>
+                    <strong>사용처:</strong> 주소지 내 연 매출 30억 이하 소상공인 매장
+                </div>
+                <a href="https://www.gov.kr/" class="btn-apply">민생회복 소비쿠폰 신청 →</a>
+            </div>
+
+            <!-- 정책자금 지원 -->
+            <div class="policy-card">
+                <h3>💰 소상공인 정책자금</h3>
+                <p>
+                    민간 금융기관 이용이 어려운 소상공인을 위한 저금리 정책자금을 지원합니다. 
+                    시중은행보다 낮은 금리로 경영 안정 및 성장을 도와드립니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원규모:</strong> 최대 5억원 이내 (시설자금 포함 시 10억원)<br>
+                    <strong>금리:</strong> 연 2.99%~3.39% (2025년 기준)<br>
+                    <strong>대상:</strong> 소상공인 기본법에 따른 소상공인
+                </div>
+                <a href="https://ols.semas.or.kr/" class="btn-apply">정책자금 신청하기 →</a>
+            </div>
+            
+            <!-- 새출발기금 -->
+            <div class="policy-card">
+                <h3>🎯 새출발기금</h3>
+                <p>
+                    채무 조정을 통해 소상공인의 재기를 지원합니다. 원금 감면, 금리 인하, 
+                    상환 기간 연장 등 맞춤형 채무 조정을 받을 수 있습니다.
+                </p>
+                <div class="highlight">
+                    <strong>규모:</strong> 40조원 이상 (2024년 30조원에서 확대)<br>
+                    <strong>원금 감면:</strong> 최대 90% (저소득 취약계층)<br>
+                    <strong>상환기간:</strong> 최장 20년 연장 가능<br>
+                    <strong>지원 대상:</strong> 2020.4월~2025.6월 중 사업 영위자
+                </div>
+                <a href="https://xn--jj0bzcx22cxqefnt.kr/" class="btn-apply">새출발기금 신청하기 →</a>
+            </div>
+            
+            <!-- 부담경감 크레딧 -->
+            <div class="policy-card">
+                <h3>💳 부담경감 크레딧</h3>
+                <p>
+                    연 매출 3억원 이하 소상공인에게 공과금(전기·가스·수도), 
+                    4대 보험료, 통신비, 차량연료비 납부에 사용 가능한 50만원 크레딧을 지원합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 50만원<br>
+                    <strong>사용처:</strong> 공과금, 4대 보험료, 통신비, 유류비<br>
+                    <strong>신청기간:</strong> 2025.7.14 ~ 11.28
+                </div>
+                <a href="https://credit.sbiz24.kr/" class="btn-apply">크레딧 신청하기 →</a>
+            </div>
+            
+            <!-- 냉난방기 지원 (신규 추가) -->
+            <div class="policy-card new">
+                <h3>❄️ 소상공인 고효율기기 지원</h3>
+                <p>
+                    에너지효율 1등급 냉난방기, 냉장고, 세탁기, 건조기 구매 시 구입비의 40%를 
+                    지원하여 전기요금 부담을 경감합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 구입가의 40%<br>
+                    <strong>냉난방기:</strong> 최대 160만원<br>
+                    <strong>냉장고:</strong> 최대 100만원<br>
+                    <strong>세탁기:</strong> 최대 80만원<br>
+                    <strong>건조기:</strong> 최대 80만원<br>
+                    <strong>신청기간:</strong> 2025.2.17 ~ 12.31 (예산 소진 시 조기 종료)
+                </div>
+                <a href="https://en-ter.co.kr/ac/main/main.do" class="btn-apply">고효율기기 신청 →</a>
+            </div>
+
+            <!-- 온라인 판로 지원 (신규 추가) -->
+            <div class="policy-card new">
+                <h3>🖥️ 소상공인 온라인 판로 지원</h3>
+                <p>
+                    온라인 시장 진출을 위한 상품 개선, 콘텐츠 제작, 온라인 쇼핑몰 입점, 
+                    라이브커머스 등 준비부터 실전, 도약까지 단계별로 지원합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원내용:</strong> 온라인 진출 교육, 상품 개선, 콘텐츠 제작<br>
+                    <strong>판매채널:</strong> 온라인 쇼핑몰, TV홈쇼핑, 라이브커머스<br>
+                    <strong>대상:</strong> 소상공인기본법 제2조에 따른 소상공인<br>
+                    <strong>신청:</strong> 판판대로 플랫폼을 통한 온라인 접수
+                </div>
+                <a href="https://fanfandaero.kr/" class="btn-apply">온라인판로 지원 신청 →</a>
+            </div>
+            
+            <!-- 배달택배비 지원 -->
+            <div class="policy-card">
+                <h3>📦 배달·택배비 지원</h3>
+                <p>
+                    연 매출 1억 400만원 이하 간이과세자로 배달·택배를 이용하는 
+                    소상공인에게 비용을 지원합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 연 최대 30만원<br>
+                    <strong>대상:</strong> 간이과세자 소상공인 (67만 9천명)
+                </div>
+                <a href="https://www.bizinfo.go.kr/web/lay1/bbs/S1T122C128/AS/74/view.do?pblancId=PBLN_000000000109448" class="btn-apply">배달택배비 신청하기 →</a>
+            </div>
+            
+            <!-- 전기요금 지원 -->
+            <div class="policy-card">
+                <h3>⚡ 전기요금 지원</h3>
+                <p>
+                    소상공인의 전기요금 부담을 덜어드립니다. 2024년 20만원 지원을 
+                    받았어도 2025년 추가 5만원을 더 받을 수 있습니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 최대 25만원<br>
+                    <strong>대상:</strong> 연 매출 1억 400만원 이하<br>
+                    <strong>개업 기준:</strong> 2024년 2월 15일 이전
+                </div>
+                <a href="https://www.bizinfo.go.kr/" class="btn-apply">전기요금 지원 신청 →</a>
+            </div>
+            
+            <!-- 소상공인 신용카드 -->
+            <div class="policy-card">
+                <h3>💳 소상공인 신용카드</h3>
+                <p>
+                    신용점수가 낮아 운영자금 마련이 어려운 소상공인을 위한 
+                    최대 1,000만원 한도의 신용카드를 발급합니다.
+                </p>
+                <div class="highlight">
+                    <strong>한도:</strong> 최대 1,000만원<br>
+                    <strong>혜택:</strong> 6개월 무이자, 3% 캐시백
+                </div>
+                <a href="https://www.semas.or.kr/" class="btn-apply">카드 신청하기 →</a>
+            </div>
+            
+            <!-- 대환대출 -->
+            <div class="policy-card">
+                <h3>🔄 대환대출 지원</h3>
+                <p>
+                    기존 고금리 대출을 저금리로 전환할 수 있도록 지원합니다. 
+                    7% 이상 금리를 약 4.5%로 낮춰 이자 부담을 경감합니다.
+                </p>
+                <div class="highlight">
+                    <strong>금리 인하:</strong> 7% → 4.5%<br>
+                    <strong>상환방식:</strong> 2년 거치 8년 분할상환 신설<br>
+                    <strong>지원 대상:</strong> 햇살론 등 정책보증부 대출 추가
+                </div>
+                <a href="https://ols.semas.or.kr/" class="btn-apply">대환대출 신청 →</a>
+            </div>
+            
+            <!-- 점포철거비 지원 -->
+            <div class="policy-card">
+                <h3>🏗️ 점포철거비 지원</h3>
+                <p>
+                    폐업 시 점포 철거 및 원상복구에 드는 비용을 지원합니다. 
+                    2024년 대비 지원 금액이 대폭 인상되었습니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 최대 400만원 (평당 20만원)<br>
+                    <strong>대상:</strong> 폐업 소상공인<br>
+                    <strong>증액:</strong> 2024년 250만원 → 2025년 400만원
+                </div>
+                <a href="https://www.semas.or.kr/web/SUP01/SUP0117/SUP011702.kmdc" class="btn-apply">철거비 지원 신청 →</a>
+            </div>
+            
+            <!-- 재취업 지원 -->
+            <div class="policy-card">
+                <h3>👔 소상공인 특화 취업지원</h3>
+                <p>
+                    폐업 후 재취업을 준비하는 소상공인을 위한 맞춤형 교육 프로그램과 
+                    인센티브를 제공합니다.
+                </p>
+                <div class="highlight">
+                    <strong>교육지원:</strong> 월 50~110만원 (최대 6개월)<br>
+                    <strong>사전교육:</strong> 첫 한달 60만원<br>
+                    <strong>성공 인센티브:</strong> 최대 150만원 (6개월 이상 근속)
+                </div>
+                <a href="https://job.gg.go.kr/entSprt/detail.do?seq=701" class="btn-apply">취업지원 신청 →</a>
+            </div>
+            
+            <!-- 고용보험료 지원 -->
+            <div class="policy-card">
+                <h3>💼 자영업자 고용보험료 지원</h3>
+                <p>
+                    자영업자가 고용보험에 가입할 때 보험료의 50%를 최대 5년간 
+                    지원하여 실직 시 안전망을 제공합니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원금액:</strong> 보험료의 50%<br>
+                    <strong>지원기간:</strong> 최대 5년<br>
+                    <strong>대상:</strong> 자영업자 고용보험 가입자
+                </div>
+                <a href="https://www.semas.or.kr/web/SUP01/SUP013001.kmdc" class="btn-apply">고용보험 신청 →</a>
+            </div>
+            
+            <!-- 법률세무상담 -->
+            <div class="policy-card">
+                <h3>⚖️ 소상공인 법률 서비스 무료 지원</h3>
+                <p>
+                    소상공인이 경영 중 겪는 법률, 노무, 세무 문제에 대해 
+                    전문가의 무료 상담을 받을 수 있습니다.
+                </p>
+                <div class="highlight">
+                    <strong>지원내용:</strong> 법률·노무·세무 상담<br>
+                    <strong>비용:</strong> 무료
+                </div>
+                <a href="https://www.bizinfo.go.kr/" class="btn-apply">상담 신청하기 →</a>
+            </div>
+            
+            <!-- 온누리상품권 -->
+            <div class="policy-card">
+                <h3>🎫 온누리상품권 활성화</h3>
+                <p>
+                    전통시장 및 골목상권 소상공인의 매출 증대를 위한 
+                    온누리상품권 할인 혜택이 강화되었습니다.
+                </p>
+                <div class="highlight">
+                    <strong>할인율:</strong> 최대 10%<br>
+                    <strong>사용처:</strong> 전통시장, 골목상권<br>
+                    <strong>신규:</strong> 디지털 온누리상품권 출시
+                </div>
+                <a href="https://www.semas.or.kr/web/SUP01/SUP0112/SUP011203.kmdc" class="btn-apply">온누리상품권 안내 →</a>
+            </div>
+
+            <!-- 노란우산공제 -->
+            <div class="policy-card">
+                <h3>☂️ 노란우산공제</h3>
+                <p>
+                    소기업·소상공인의 폐업이나 노령 등에 대비한 생활안정과 
+                    사업재기를 위한 공제제도입니다. 소득공제 혜택도 있습니다.
+                </p>
+                <div class="highlight">
+                    <strong>가입대상:</strong> 소기업·소상공인 개인사업자 또는 법인 대표자<br>
+                    <strong>혜택:</strong> 연 500만원 소득공제<br>
+                    <strong>소득공제 확대:</strong> 법인대표자 급여 기준 7천만원 → 8천만원
+                </div>
+                <a href="https://www.8899.or.kr/" class="btn-apply">노란우산공제 가입 →</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>중소기업통합콜센터:</strong> 국번없이 <a href="tel:1357">1357</a></p>
+            <p><strong>새출발기금 콜센터:</strong> <a href="tel:1660-1378">1660-1378</a></p>
+            <p><strong>부담경감크레딧 콜센터:</strong> <a href="tel:1533-0600">1533-0600</a></p>
+            <p><strong>민생회복 소비쿠폰:</strong> <a href="tel:1670-2525">1670-2525</a></p>
+            <p><strong>고효율기기 지원:</strong> 한국전력 <a href="tel:1551-1212">1551-1212</a></p>
+            <p><strong>소상공인시장진흥공단:</strong> <a href="https://www.semas.or.kr/">www.semas.or.kr</a></p>
+            <p><strong>기업마당:</strong> <a href="https://www.bizinfo.go.kr/">www.bizinfo.go.kr</a></p>
+            <p><strong>소상공인마당:</strong> <a href="https://www.sbiz.or.kr/">www.sbiz.or.kr</a></p>
+            <p><strong>소상공인24:</strong> <a href="https://www.sbiz24.kr/">www.sbiz24.kr</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 지원 내용 및 신청 방법은 정책별로 상이할 수 있으며, 예산 소진 시 조기 마감될 수 있습니다.<br>
+                ※ 최신 정보는 각 정책의 공식 웹사이트에서 확인하시기 바랍니다.<br>
+                ※ 2025년 10월 30일 기준 정보입니다. (최신 업데이트 반영)<br>
+                ※ 새로 추가된 정책: 민생회복 소비쿠폰, 고효율기기 지원, 온라인 판로 지원
+            </p>
+        </div>
+    </div>
+</body>
+</html>
