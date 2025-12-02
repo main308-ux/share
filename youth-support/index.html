@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 청년 (만 19~34세) 정부 지원 혜택</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            padding: 40px 0 !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #667eea !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #667eea !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #667eea !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .new-badge {
+            display: inline-block !important;
+            background: #ff4757 !important;
+            color: white !important;
+            padding: 3px 8px !important;
+            border-radius: 5px !important;
+            font-size: 0.8rem !important;
+            font-weight: bold !important;
+            margin-left: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #ffffff !important;
+            padding: 40px !important;
+            margin: 40px 40px 0 40px !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .footer h3 {
+            color: #667eea !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.4rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>🎓💼 2025 청년 (만 19~34세) 정부 지원 혜택</h2>
+            <p>
+                꿈을 향해 나아가는 청년들을 위한 든든한 동반자!<br>
+                대한민국 정부가 청년들의 활기찬 미래를 위해<br>
+                교육·취업·주거·금융·문화 등 전방위적으로<br>
+                맞춤형 혜택을 지원합니다.
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>📋 2025년 청년정책 주요 특징</h4>
+            <ul>
+                <li>청년도약계좌 정부기여금 확대 (월 최대 3만 3천원, 5년 최대 198만원)</li>
+                <li>국가장학금 지원 대상 확대 (8구간→9구간, 100만명→150만명)</li>
+                <li>청년월세 한시특별지원 연장 (12개월→24개월, 월 20만원)</li>
+                <li>주거안정장학금 신설 (4만 2천명, 연 240만원)</li>
+                <li>근로장학금 확대 (14만명→20만명)</li>
+                <li>청년일자리도약장려금 빈일자리 유형 신설</li>
+                <li>청년주택드림대출 신설 (분양가 80%, 최저 2.2% 금리)</li>
+                <li>국민취업지원제도 청년 특화 프로그램 강화</li>
+            </ul>
+        </div>
+        
+        <!-- 교육·학자금 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>📚 교육·학자금 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🎓 국가장학금 I유형<span class="new-badge">확대</span></h3>
+                    <p>
+                        대학생의 등록금 부담을 경감하고 누구나 의지와 능력에 따라
+                        고등교육 기회를 가질 수 있도록 소득연계 맞춤형 장학금을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 대한민국 국적, 국내대학 재학생, 학자금지원 9구간 이하<br>
+                        <strong>2025년 확대:</strong> 8구간→9구간으로 확대 (100만명→150만명)<br>
+                        <strong>지급액:</strong> 기초·차상위 전액, 1~3구간 285만원, 4~6구간 210만원, 7~8구간 175만원, 9구간 50만원(학기당)<br>
+                        <strong>성적기준:</strong> 직전학기 12학점 이상, 80점(B학점) 이상<br>
+                        <strong>신청기간:</strong> 매학기 1차(11월, 5월), 2차(2월, 8월)
+                    </div>
+                    <a href="https://www.kosaf.go.kr/" class="btn-apply">👉국가장학금 신청 (한국장학재단)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏠 주거안정장학금<span class="new-badge">NEW</span></h3>
+                    <p>
+                        원거리 통학으로 어려움을 겪는 저소득층 대학생의 주거비 부담을 완화하고
+                        학업에 전념할 수 있도록 주거비를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기초·차상위 대학생 중 원거리 통학자<br>
+                        <strong>지원규모:</strong> 4만 2천명<br>
+                        <strong>지급액:</strong> 연 240만원 (학기당 최대 120만원)<br>
+                        <strong>특징:</strong> 2025년 신설, 실거주지와 학교 간 거리 기준 적용<br>
+                        <strong>신청:</strong> 한국장학재단 홈페이지
+                    </div>
+                    <a href="https://www.kosaf.go.kr/" class="btn-apply">👉주거안정장학금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💼 국가근로장학금<span class="new-badge">확대</span></h3>
+                    <p>
+                        저소득층 대학생에게 학업과 근로를 병행할 수 있도록 교내·외 근로 기회를 제공하여
+                        학자금 마련 및 직업 역량 개발을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 대학생 중 학자금지원 9구간 이하<br>
+                        <strong>2025년 확대:</strong> 14만명→20만명으로 확대<br>
+                        <strong>시급:</strong> 2025년 최저임금 적용 (시간당 10,030원)<br>
+                        <strong>근무시간:</strong> 학기 중 주당 최대 20시간, 방학 중 40시간<br>
+                        <strong>신청:</strong> 한국장학재단 홈페이지
+                    </div>
+                    <a href="https://www.kosaf.go.kr/" class="btn-apply">👉근로장학금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📖 국민내일배움카드</h3>
+                    <p>
+                        직업능력개발훈련을 원하는 국민 누구나 신청 가능한 직업훈련 지원 카드로
+                        다양한 분야의 교육을 저렴하게 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15세 이상 국민 (재학생, 공무원 등 일부 제외)<br>
+                        <strong>지원금액:</strong> 5년간 300~500만원<br>
+                        <strong>본인부담:</strong> 훈련비의 15~45% (소득에 따라 차등)<br>
+                        <strong>훈련분야:</strong> IT, 디자인, 마케팅, 자격증, AI·빅데이터 등 전 분야<br>
+                        <strong>특징:</strong> K-디지털 트레이닝 등 신기술 분야 강화
+                    </div>
+                    <a href="https://www.hrd.go.kr/" class="btn-apply">👉내일배움카드 신청 (HRD-Net)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 취업·일자리 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💼 취업·일자리 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🎯 국민취업지원제도</h3>
+                    <p>
+                        저소득 구직자에게 취업지원서비스와 소득지원을 결합하여 제공하고
+                        생계 걱정 없이 취업 준비에 전념할 수 있도록 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>I유형 대상:</strong> 만 15~34세 청년은 중위소득 120% 이하, 재산 5억원 이하<br>
+                        <strong>I유형 지원:</strong> 구직촉진수당 월 50만원 (최대 6개월), 취업지원 프로그램<br>
+                        <strong>II유형:</strong> I유형 소득·재산 요건 초과자, 취업지원서비스 제공<br>
+                        <strong>청년 특화:</strong> 빈일자리 업종 취업 시 추가 지원 (훈련비+취업성공수당)<br>
+                        <strong>신청:</strong> 거주지 고용센터 또는 온라인
+                    </div>
+                    <a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050886" class="btn-apply">👉국민취업지원제도 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💰 청년일자리도약장려금<span class="new-badge">확대</span></h3>
+                    <p>
+                        청년 미취업자를 정규직으로 채용한 기업에 인건비를 지원하여
+                        청년 고용을 촉진하고 기업 부담을 경감합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상기업:</strong> 청년(만 15~34세) 정규직 채용 5인 이상 중소·중견기업<br>
+                        <strong>지원금액:</strong> 1년간 월 60만원 (최대 720만원)<br>
+                        <strong>2025년 신설:</strong> 빈일자리 유형 추가 (제조·조선·뿌리산업·해운업)<br>
+                        <strong>빈일자리 혜택:</strong> 청년에게 근속 인센티브 최대 480만원 추가 지급<br>
+                        <strong>신청:</strong> 고용24 또는 고용센터
+                    </div>
+                    <a href="https://www.work.go.kr/youthPkgIntrcn/main.do" class="btn-apply">👉청년일자리도약장려금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏢 청년내일채움공제</h3>
+                    <p>
+                        중소·중견기업에 취업한 청년이 2~3년간 장기 근속하면
+                        청년·기업·정부가 공동으로 적립하여 목돈을 마련할 수 있도록 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15~34세(군필 시 최대 39세) 중소기업 정규직 취업자<br>
+                        <strong>2년형:</strong> 청년 300만원 + 기업 300만원 + 정부 600만원 = 1,200만원<br>
+                        <strong>3년형:</strong> 2025년 2월 신설, 최소 1,224만원 이상 목돈 마련<br>
+                        <strong>특징:</strong> 50인 미만 제조·건설업 중심, 장기 근속 유도<br>
+                        <strong>신청:</strong> 취업일로부터 6개월 이내 신청
+                    </div>
+                    <a href="https://www.sbcplan.or.kr/" class="btn-apply">👉청년내일채움공제 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💵 근로장려금</h3>
+                    <p>
+                        저소득 근로자·사업자 가구에게 근로를 장려하고 실질소득을 지원하여
+                        빈곤 탈출을 돕는 근로연계형 소득지원 제도입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>소득요건:</strong> 단독 2,200만원, 홑벌이 3,200만원, 맞벌이 4,400만원 미만<br>
+                        <strong>재산요건:</strong> 가구원 재산 합계 2억 4천만원 미만<br>
+                        <strong>지원금액:</strong> 단독 최대 165만원, 홑벌이 285만원, 맞벌이 330만원<br>
+                        <strong>신청기간:</strong> 정기 5.1~5.31, 반기 3.1~3.15/9.1~9.15<br>
+                        <strong>신청:</strong> 국세청 홈택스
+                    </div>
+                    <a href="https://www.hometax.go.kr/" class="btn-apply">👉근로장려금 신청 (홈택스)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🌊 실업급여</h3>
+                    <p>
+                        고용보험 가입 근로자가 비자발적으로 실직했을 때
+                        재취업 활동 기간 동안 생계를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>자격:</strong> 이직 전 18개월간 고용보험 180일 이상 가입<br>
+                        <strong>하한액:</strong> 일 64,192원 (월 약 192만원) - 2025년 인상<br>
+                        <strong>상한액:</strong> 일 66,000원 (월 약 198만원)<br>
+                        <strong>기간:</strong> 120일~270일 (연령·가입기간별 차등)<br>
+                        <strong>신청:</strong> 고용보험 홈페이지 또는 고용센터
+                    </div>
+                    <a href="https://www.ei.go.kr/" class="btn-apply">👉실업급여 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 주거 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏠 주거 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💰 청년월세 한시특별지원<span class="new-badge">연장</span></h3>
+                    <p>
+                        청년의 주거비 부담 완화를 위해 월세 거주 청년에게
+                        실제 납부하는 임대료를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세(인천 39세) 무주택 청년, 소득 중위 60% 이하<br>
+                        <strong>2025년 연장:</strong> 12개월→24개월로 연장<br>
+                        <strong>지급액:</strong> 월 최대 20만원 (24개월, 최대 480만원)<br>
+                        <strong>추가요건:</strong> 청약통장 보유 필수, 부모 소득·재산 기준 충족<br>
+                        <strong>신청:</strong> 복지로 또는 주민센터 (2025년 2월까지 상시 접수)
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉청년월세지원 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏘️ 청년주택드림대출<span class="new-badge">NEW</span></h3>
+                    <p>
+                        청년이 생애 최초 내 집을 마련할 수 있도록
+                        저금리로 분양가의 최대 80%를 대출해주는 신규 상품입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 20~39세 무주택자, 청년주택드림청약통장 1년 이상 가입<br>
+                        <strong>출시시기:</strong> 2025년 상반기<br>
+                        <strong>대출한도:</strong> 분양가의 80% (최대 6억원)<br>
+                        <strong>금리:</strong> 최저 2.2% ~ (소득별·만기별 차등)<br>
+                        <strong>만기:</strong> 최대 40년
+                    </div>
+                    <a href="https://nhuf.molit.go.kr/" class="btn-apply">👉청년주택드림대출 안내 (주택도시기금)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏡 청년전용 버팀목전세대출</h3>
+                    <p>
+                        무주택 청년의 주거 안정을 위해
+                        전세자금을 저금리로 대출해주는 상품입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세 무주택 청년, 부부합산 연소득 5천만원 이하<br>
+                        <strong>대출한도:</strong> 수도권 최대 4억원, 지방 최대 2억원<br>
+                        <strong>금리:</strong> 연 1.8~3.3% (소득 및 주택가격에 따라 차등)<br>
+                        <strong>대출기간:</strong> 2년 (최대 4회 연장, 10년)<br>
+                        <strong>신청:</strong> 주택도시기금 취급은행
+                    </div>
+                    <a href="https://nhuf.molit.go.kr/" class="btn-apply">👉버팀목전세대출 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏢 행복주택·청년매입임대</h3>
+                    <p>
+                        청년에게 시세보다 저렴한 임대료로
+                        공공임대주택을 공급하여 주거 부담을 경감합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>행복주택:</strong> 대학생·청년 우선 공급, 시세 60~80% 수준<br>
+                        <strong>청년매입임대:</strong> 기존주택 매입 후 시세 50% 수준 임대<br>
+                        <strong>대상:</strong> 만 19~39세 청년 (소득·자산 기준 충족)<br>
+                        <strong>거주기간:</strong> 최대 6년~10년<br>
+                        <strong>신청:</strong> LH 청약센터
+                    </div>
+                    <a href="https://apply.lh.or.kr/" class="btn-apply">👉LH 청약센터</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 금융·자산형성 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💵 금융·자산형성 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💎 청년도약계좌<span class="new-badge">확대</span></h3>
+                    <p>
+                        청년의 중장기 자산형성을 지원하는 금융 상품으로
+                        5년간 저축하면 정부 기여금과 비과세 혜택을 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세, 개인소득 7,500만원 이하, 가구소득 중위 250% 이하<br>
+                        <strong>2025년 확대:</strong> 정부 기여금 매칭한도 월 70만원으로 통일<br>
+                        <strong>납입한도:</strong> 월 최대 70만원 (연 840만원)<br>
+                        <strong>정부기여금:</strong> 월 최대 3만 3천원 (소득별 차등, 5년 최대 198만원)<br>
+                        <strong>금리:</strong> 최대 6% (기본 3.8~4.5% + 우대금리)<br>
+                        <strong>만기:</strong> 5년, 최대 5,000만원 형성 (원금 4,200만원 + 이자·기여금)<br>
+                        <strong>추가혜택:</strong> 비과세, 신용점수 가점(2년 이상 800만원 이상 납입 시)<br>
+                        <strong>부분인출:</strong> 2025년 하반기부터 2년 이상 유지 시 40% 인출 가능
+                    </div>
+                    <a href="https://ylaccount.kinfa.or.kr/" class="btn-apply">👉청년도약계좌 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💳 청년내일저축계좌</h3>
+                    <p>
+                        근로하는 저소득 청년이 일정 금액을 저축하면
+                        정부가 추가 적립하여 자산 형성을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15~39세, 기초생활수급자·차상위계층 등 근로청년<br>
+                        <strong>본인저축:</strong> 월 10만원 또는 15만원<br>
+                        <strong>정부지원:</strong> 월 30만원 (본인 저축액의 2~3배 매칭)<br>
+                        <strong>기간:</strong> 3년, 최대 1,440만원 목돈 마련<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉청년내일저축계좌 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏦 청년희망적금</h3>
+                    <p>
+                        청년의 자산형성을 지원하기 위해
+                        2년간 저축 시 정부 기여금을 지급하는 적금상품입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세, 개인소득 3,600만원 이하, 가구소득 중위 180% 이하<br>
+                        <strong>납입:</strong> 월 50만원 (2년간 1,200만원)<br>
+                        <strong>저축장려금:</strong> 최대 36만원 (소득별 차등)<br>
+                        <strong>금리:</strong> 연 5% 수준<br>
+                        <strong>만기:</strong> 2년, 최대 1,300만원 이상 수령<br>
+                        <strong>특징:</strong> 청년도약계좌와 중복 불가
+                    </div>
+                    <a href="https://www.kinfa.or.kr/" class="btn-apply">👉청년희망적금 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💰 서울시 희망두배 청년통장</h3>
+                    <p>
+                        서울시 거주 청년이 매월 일정 금액을 저축하면
+                        서울시에서 동일한 금액을 매칭하여 적립해주는 제도입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 18~39세 서울시 거주 청년, 중위소득 100% 이하<br>
+                        <strong>본인저축:</strong> 월 10만원 또는 15만원<br>
+                        <strong>서울시 지원:</strong> 본인 저축액과 동일한 금액 매칭<br>
+                        <strong>기간:</strong> 3년, 최대 1,080만원 목돈 마련<br>
+                        <strong>신청:</strong> 서울시 홈페이지 또는 주민센터
+                    </div>
+                    <a href="https://young.seoul.go.kr/" class="btn-apply">👉희망두배 청년통장 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 생활·복지 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🌟 생활·복지 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💳 K-패스 교통비 지원</h3>
+                    <p>
+                        대중교통을 자주 이용하는 청년에게 교통비 일부를 환급하여
+                        교통비 부담을 경감합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세 청년 (소득 제한 없음)<br>
+                        <strong>환급비율:</strong> 월 대중교통비의 최대 20% (청년 기준)<br>
+                        <strong>환급한도:</strong> 월 최대 15,000원<br>
+                        <strong>이용:</strong> 등록 후 월 15회 이상 대중교통 이용 시<br>
+                        <strong>신청:</strong> K-패스 앱 또는 지역별 교통카드 앱
+                    </div>
+                    <a href="https://www.kpass.go.kr/" class="btn-apply">👉K-패스 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎭 청년문화예술패스</h3>
+                    <p>
+                        만 19세 청년(2006년생)에게 공연·전시·영화 등
+                        문화예술 관람비를 지원하여 문화향유 기회를 확대합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19세 청년 (2006년생)<br>
+                        <strong>지원금액:</strong> 1인당 최대 15만원<br>
+                        <strong>사용처:</strong> 공연, 전시, 영화, 도서 등 문화예술 콘텐츠<br>
+                        <strong>특징:</strong> 소득 제한 없음, 누구나 신청 가능<br>
+                        <strong>신청:</strong> 문화포털 또는 전용 앱
+                    </div>
+                    <a href="https://www.culture.go.kr/" class="btn-apply">👉청년문화예술패스 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🧠 청년 마음건강 지원</h3>
+                    <p>
+                        정신건강 관리가 필요한 청년에게
+                        전문 상담 및 심리치료 서비스를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19~34세 청년<br>
+                        <strong>지원내용:</strong> 1인당 연 최대 10회 무료 심리상담<br>
+                        <strong>서비스:</strong> 우울, 불안, 스트레스 등 심리상담·치료<br>
+                        <strong>이용:</strong> 전국 청년 마음건강 지원센터<br>
+                        <strong>신청:</strong> 지역별 정신건강복지센터 또는 온라인
+                    </div>
+                    <a href="https://www.mohw.go.kr/" class="btn-apply">👉청년 마음건강 지원</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🌾 청년농업인 영농정착지원금</h3>
+                    <p>
+                        농업에 종사하는 청년에게 영농 정착 자금을 지원하여
+                        안정적으로 농업에 종사할 수 있도록 돕습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 18~40세 미만 독립경영 청년농업인<br>
+                        <strong>지급액:</strong> 월 110만원 (연 1,320만원)<br>
+                        <strong>지급기간:</strong> 최대 3년 (최대 3,960만원)<br>
+                        <strong>특징:</strong> 영농경력 3년 이하 청년 우대<br>
+                        <strong>신청:</strong> 농림축산식품부 또는 지자체
+                    </div>
+                    <a href="https://www.mafra.go.kr/" class="btn-apply">👉청년농업인 지원 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🚗 긴급복지지원</h3>
+                    <p>
+                        갑작스러운 위기상황으로 생계유지가 곤란한 가구에게
+                        신속하게 생계비, 의료비, 주거비 등을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 주소득자 사망·실직·질병 등 위기상황 가구<br>
+                        <strong>지원내용:</strong> 생계비, 의료비, 주거비, 교육비 등<br>
+                        <strong>특징:</strong> 선지원 후심사, 신속 지원<br>
+                        <strong>기간:</strong> 최대 6개월<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터 또는 ☎129
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉긴급복지지원 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🔌 에너지바우처</h3>
+                    <p>
+                        저소득 청년 가구의 냉난방비 부담을 경감하기 위해
+                        전기·가스·난방비 구매비용을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기초생활수급자, 차상위계층 등<br>
+                        <strong>지원금액:</strong> 여름 11.8만원, 겨울 30.1~44.4만원<br>
+                        <strong>신청기간:</strong> 여름 5~6월, 겨울 10~11월<br>
+                        <strong>사용처:</strong> 전기·도시가스·지역난방·등유·LPG<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터 또는 에너지바우처 홈페이지
+                    </div>
+                    <a href="https://www.energyv.or.kr/" class="btn-apply">👉에너지바우처 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 창업 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💡 창업 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🚀 청년창업지원</h3>
+                    <p>
+                        창업을 준비하거나 창업 초기 청년에게
+                        자금·교육·멘토링 등을 종합적으로 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 39세 이하 예비·초기 창업자<br>
+                        <strong>청년창업사관학교:</strong> 6개월 창업교육 + 사업화 자금 최대 1억원<br>
+                        <strong>창업도약패키지:</strong> 초기창업기업 사업화 자금 최대 1억원<br>
+                        <strong>예비창업패키지:</strong> 예비창업자 사업화 자금 최대 1억원<br>
+                        <strong>신청:</strong> K-Startup 또는 중소벤처기업진흥공단
+                    </div>
+                    <a href="https://www.k-startup.go.kr/" class="btn-apply">👉청년창업지원 신청 (K-Startup)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💼 청년전용 창업자금</h3>
+                    <p>
+                        청년 창업자에게 저금리로 창업 자금을 대출하여
+                        초기 자금 부담을 경감합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 39세 이하 창업 7년 이내 청년 창업자<br>
+                        <strong>대출한도:</strong> 최대 1억원<br>
+                        <strong>금리:</strong> 연 2% 내외 (정책금리 연동)<br>
+                        <strong>상환기간:</strong> 최대 5년 (거치기간 2년 포함)<br>
+                        <strong>신청:</strong> 중소벤처기업진흥공단 또는 신용보증기금
+                    </div>
+                    <a href="https://www.kosmes.or.kr/" class="btn-apply">👉청년창업자금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏢 청년 소상공인 지원</h3>
+                    <p>
+                        청년 소상공인의 경영 안정과 성장을 위해
+                        다양한 맞춤형 지원을 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 39세 이하 소상공인<br>
+                        <strong>소상공인 정책자금:</strong> 최대 7천만원, 연 2~3% 금리<br>
+                        <strong>새출발기금:</strong> 폐업·재창업 지원금 최대 2천만원<br>
+                        <strong>컨설팅:</strong> 경영·마케팅·세무 무료 컨설팅<br>
+                        <strong>신청:</strong> 소상공인시장진흥공단
+                    </div>
+                    <a href="https://www.semas.or.kr/" class="btn-apply">👉소상공인 지원 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>보건복지상담센터:</strong> 국번없이 <a href="tel:129">129</a></p>
+            <p><strong>고용노동부 상담센터:</strong> 국번없이 <a href="tel:1350">1350</a></p>
+            <p><strong>한국장학재단:</strong> <a href="tel:1599-2000">1599-2000</a></p>
+            <p><strong>서민금융진흥원(청년도약계좌):</strong> <a href="tel:1397">1397</a></p>
+            <p><strong>주택도시기금:</strong> <a href="tel:1566-9009">1566-9009</a></p>
+            <p><strong>K-패스:</strong> <a href="https://www.kpass.go.kr/">www.kpass.go.kr</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>온통청년(청년정책 통합):</strong> <a href="https://www.youthcenter.go.kr/">www.youthcenter.go.kr</a> / <a href="https://www.korea.kr/withyou/">www.korea.kr/withyou</a></p>
+            <p><strong>K-Startup(창업지원):</strong> <a href="https://www.k-startup.go.kr/">www.k-startup.go.kr</a></p>
+            <p><strong>고용24:</strong> <a href="https://www.work.go.kr/">www.work.go.kr</a> / 고용센터 <a href="tel:1350">1350</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었으며, 최신 정책 변경사항을 반영하였습니다.<br>
+                ※ <strong>2025년 주요 변경사항:</strong><br>
+                • 청년도약계좌 정부 기여금 확대 (월 최대 3만3천원, 매칭한도 70만원 통일)<br>
+                • 국가장학금 지원 대상 확대 (8구간→9구간, 100만명→150만명 지원)<br>
+                • 청년월세 한시특별지원 연장 (12개월→24개월, 월 20만원)<br>
+                • 주거안정장학금 신설 (4만2천명, 연 240만원)<br>
+                • 근로장학금 확대 (14만명→20만명)<br>
+                • 청년일자리도약장려금 빈일자리 유형 신설<br>
+                • 청년주택드림대출 신설 (분양가 80%, 최저 2.2% 금리)<br>
+                • 청년내일채움공제 3년형 신설 (2025년 2월)<br>
+                • K-패스 청년 교통비 지원 강화<br>
+                ※ 지원 내용 및 신청 방법은 정책별로 상이할 수 있으며, 지자체별 추가 지원이 있을 수 있습니다.<br>
+                ※ 청년 연령 기준은 정책별로 다를 수 있으니 각 정책의 상세 조건을 확인하시기 바랍니다.<br>
+                ※ 최신 정보는 각 정책의 공식 웹사이트 또는 복지로(www.bokjiro.go.kr), 정부24(www.gov.kr), 온통청년(www.youthcenter.go.kr)에서 확인하시기 바랍니다.<br>
+                ※ 모든 링크는 2025년 10월 기준 유효한 공식 사이트입니다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
