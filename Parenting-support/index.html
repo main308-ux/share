@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 임신·출산·육아 정부 지원 정책</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 50%, #4facfe 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            padding: 40px 0 !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #ff6b9d !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #ff6b9d !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #ff6b9d !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #ff6b9d !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #ff6b9d !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #ff6b9d, #c471ed) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 100%) !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-apply:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4) !important;
+        }
+        
+        .footer {
+            background: #2c3e50 !important;
+            color: white !important;
+            padding: 40px !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+        
+        .footer h3 {
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.3rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+        }
+        
+        .footer a {
+            color: #3498db !important;
+            text-decoration: none !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+
+        /* 모바일 전용 스타일 (768px 이하) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 5px !important;
+            }
+            
+            .intro {
+                padding: 25px 12px !important;
+                margin: 0 8px 15px 8px !important;
+            }
+            
+            .intro h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .intro p {
+                font-size: 1rem !important;
+            }
+            
+            .notice {
+                padding: 18px 12px !important;
+                margin: 0 8px 15px 8px !important;
+            }
+            
+            .notice h4 {
+                font-size: 1rem !important;
+            }
+            
+            .period-section {
+                margin: 0 8px 15px 8px !important;
+            }
+            
+            .period-title {
+                padding: 15px 12px !important;
+            }
+            
+            .period-title h3 {
+                font-size: 1.3rem !important;
+            }
+            
+            .policy-card {
+                padding: 15px !important;
+                border-radius: 12px !important;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.2rem !important;
+                margin: 0 0 10px 0 !important;
+            }
+            
+            .policy-card p {
+                font-size: 0.9rem !important;
+                margin: 0 0 12px 0 !important;
+                line-height: 1.5 !important;
+            }
+            
+            .policy-card .highlight {
+                padding: 8px 10px !important;
+                margin: 0 0 12px 0 !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .policy-grid {
+                gap: 12px !important;
+            }
+            
+            .btn-apply {
+                padding: 12px 20px !important;
+                font-size: 0.95rem !important;
+            }
+            
+            .footer {
+                padding: 20px 12px !important;
+                margin: 15px 8px 0 8px !important;
+            }
+            
+            .footer h3 {
+                font-size: 1.2rem !important;
+            }
+
+            .notice li {
+                font-size: 0.85rem !important;
+                padding: 3px 0 !important;
+            }
+            
+            .footer p {
+                font-size: 0.85rem !important;
+                margin: 8px 0 !important;
+            }
+            
+            .footer a {
+                font-size: 0.85rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>🎉 2025년 임신·출산·육아 정부 지원 정책</h2>
+            <p>
+                행복한 임신과 출산, 건강한 육아를 위해 정부에서 지원하는 다양한 혜택들을 
+                시기별로 정리했습니다. 각 정책의 신청 방법과 지원 내용을 확인하세요!
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>📌 꼭 기억하세요!</h4>
+            <ul>
+                <li>대부분의 지원금은 신청해야 받을 수 있습니다</li>
+                <li>출생 신고 후 60일 이내 신청 시 소급 지원 가능한 경우가 많습니다</li>
+                <li>지자체별로 추가 지원이 있을 수 있으니 확인하세요</li>
+                <li>복지로(www.bokjiro.go.kr)에서 통합 신청이 가능합니다</li>
+            </ul>
+        </div>
+        
+        <!-- 임신기 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🤰 임신기</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💳 임신·출산 진료비 지원</h3>
+                    <p>
+                        임신 확인 시부터 출산 후 2년까지 진료비를 바우처로 지원합니다.
+                        2025년부터 다태아 지원이 대폭 확대되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>단태아:</strong> 100만원<br>
+                        <strong>쌍둥이:</strong> 200만원<br>
+                        <strong>세쌍둥이:</strong> 300만원<br>
+                        <strong>네쌍둥이 이상:</strong> 400만원
+                    </div>
+                    <a href="http://www.voucher.go.kr/voucher/pregnancy.do" class="btn-apply">👉 진료비 지원 신청하기</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🔬 임신 준비 건강검진</h3>
+                    <p>
+                        임신을 준비하는 20~49세 가임기 남녀를 대상으로 임신 전 필수 
+                        가임력 검사 비용을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>여성:</strong> 최대 13만원<br>
+                        <strong>남성:</strong> 최대 5만원
+                    </div>
+                    <a href="https://www.e-health.go.kr/gh/caSrvcGud/selectMdclSupGudInfo.do?heBiz=PG00003&menuId=200097" class="btn-apply">👉임신 사전건강관리 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🧬 난임 시술비 지원</h3>
+                    <p>
+                        난임 부부의 경제적 부담을 덜기 위해 체외수정·인공수정 시술비를 
+                        지원합니다. 2024년 11월부터 지원이 더욱 확대되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원횟수:</strong> 출산당 최대 25회 (난임부부당→출산당으로 변경)<br>
+                        - 체외수정(신선+동결): 20회<br>
+                        - 인공수정: 5회<br>
+                        <strong>본인부담률:</strong> 연령 무관 30% (45세 이상도 30%로 인하)
+                    </div>
+                    <a href="https://www.e-health.go.kr/gh/caSrvcGud/selectMdclSupGudInfo.do?heBiz=PG00001&menuId=200009" class="btn-apply">👉난임 시술비 지원 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 출산기 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>👶 출산기</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🎁 첫만남이용권</h3>
+                    <p>
+                        출생 직후 초기 양육비용을 지원하는 바우처입니다.
+                        국민행복카드로 지급되며 출생일로부터 2년간 사용 가능합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>첫째:</strong> 200만원<br>
+                        <strong>둘째 이상:</strong> 300만원<br>
+                        <strong>사용기간:</strong> 출생일로부터 2년
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004656" class="btn-apply">👉첫만남이용권 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏥 제왕절개 분만 본인부담금 무료화</h3>
+                    <p>
+                        2025년 1월 1일부터 제왕절개 분만 시 진료비 본인부담금이 
+                        기존 5%에서 0%로 전액 무료화되었습니다. 자연분만과 동일한 혜택입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>자연분만:</strong> 본인부담금 0% (기존부터 무료)<br>
+                        <strong>제왕절개:</strong> 본인부담금 5% → 0% (2025.1.1부터)<br>
+                        <strong>대상:</strong> 2025년 1월 1일 이후 분만자<br>
+                        ※ 상급병실료 등은 별도 부담
+                    </div>
+                    <a href="https://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=735&ccfNo=3&cciNo=2&cnpClsNo=1&search_put=%EC%A0%9C%EC%99%95%EC%A0%88%EA%B0%9C%20%EB%B3%B8%EC%9D%B8%EB%B6%80%EB%8B%B4" class="btn-apply">👉제왕절개 본인부담금 면제확인</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏖️ 출산전후휴가 (여성)</h3>
+                    <p>
+                        출산 전후 90일(다태아 120일)의 유급 휴가를 보장합니다.
+                        휴가 급여는 회사와 정부에서 분담하여 지급합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>기간:</strong> 90일 (다태아 120일)<br>
+                        <strong>급여:</strong> 통상임금 100% (상한액 적용)<br>
+                        <strong>의무:</strong> 출산 후 45일 이상 사용 필수
+                    </div>
+                    <a href="https://www.worklife.kr/website/index/m4/worker_pay.asp" class="btn-apply">👉출산전후휴가 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👨 배우자 출산휴가 확대</h3>
+                    <p>
+                        2025년 2월 23일부터 배우자 출산휴가가 10일에서 20일로 2배 확대되었습니다.
+                        최대 4회에 나누어 사용할 수 있고, 사용기한도 120일로 연장되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>기간:</strong> 20일 (기존 10일에서 2배 확대)<br>
+                        <strong>사용:</strong> 최대 4회 분할 가능 (기존 1회)<br>
+                        <strong>급여:</strong> 첫 10일 유급, 추가 10일 무급<br>
+                        <strong>사용기한:</strong> 출산 후 120일 이내 (기존 90일)
+                    </div>
+                    <a href="https://www.worklife.kr/website/index/m4/worker_pay.asp" class="btn-apply">👉배우자 출산휴가 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⚡ 출산 가정 전기요금 감면</h3>
+                    <p>
+                        출생일로부터 3년 미만인 영아가 있는 가구는 
+                        전기요금의 30%를 할인받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>할인율:</strong> 30% (최대 월 16,000원)<br>
+                        <strong>여름철:</strong> 최대 월 28,000원 (7~8월)<br>
+                        <strong>기간:</strong> 출생일부터 3년
+                    </div>
+                    <a href="https://m.bokjiro.go.kr/ssis-tem/cms/mob/news/promotion/1301742_1166.html" class="btn-apply">👉전기요금 감면 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏡 신생아 특례대출</h3>
+                    <p>
+                        출산 가구의 주거 안정을 위한 특례대출 제도입니다.
+                        저금리로 최대 5억원까지 대출이 가능합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>한도:</strong> 최대 5억원<br>
+                        <strong>대상:</strong> 2년 이내 출산 가구<br>
+                        <strong>특징:</strong> 일반 대출 대비 우대금리 적용
+                    </div>
+                    <a href="https://enhuf.molit.go.kr/index.jsp" class="btn-apply">👉신생아 특례대출 안내</a>
+                </div>
+                
+
+                <div class="policy-card">
+                    <h3>💒 혼인신고 세액공제 (신설)</h3>
+                    <p>
+                        2024년부터 2026년까지 혼인신고 시 부부에게 세액공제를 지원합니다.
+                        결혼 비용 부담을 경감하기 위한 한시적 정책입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원금액:</strong> 부부 각자 50만원 (합산 100만원)<br>
+                        <strong>대상:</strong> 2024~2026년 혼인신고자<br>
+                        <strong>조건:</strong> 생애 1회, 나이·재혼 무관<br>
+                        <strong>신청:</strong> 연말정산 시 신청
+                    </div>
+                    <a href="https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?nttSn=1339712&mi=2201" class="btn-apply">👉혼인신고 세액공제 안내</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 영아기 (0~1세) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>👼 영아기 (0~1세)</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💵 부모급여</h3>
+                    <p>
+                        만 0~1세 영아를 양육하는 가정에 매월 현금을 지원합니다.
+                        출생일 60일 이내 신청 시 출생월부터 소급 지원됩니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>0세(0~11개월):</strong> 월 100만원<br>
+                        <strong>1세(12~23개월):</strong> 월 50만원<br>
+                        <strong>지급일:</strong> 매월 25일<br>
+                        ※ 어린이집 이용 시 보육료 차감 후 지급
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004657" class="btn-apply">👉부모급여 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🍼 기저귀·조제분유 지원</h3>
+                    <p>
+                        저소득층 가정의 만 2세 미만 영아에게 기저귀와 조제분유 구매비용을
+                        바우처로 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>기저귀:</strong> 월 80,000원<br>
+                        <strong>조제분유:</strong> 월 80,000원 (추가 지원)<br>
+                        <strong>대상:</strong> 기준중위소득 80% 이하
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000092" class="btn-apply">👉기저귀 분유 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🤱 육아휴직 급여</h3>
+                    <p>
+                        만 8세 이하 자녀 양육을 위해 최대 1년 6개월간 육아휴직을 사용할 수 있습니다.
+                        2025년부터 급여가 대폭 인상되고 사후지급금 제도가 폐지되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>1~3개월:</strong> 월 최대 250만원<br>
+                        <strong>4~6개월:</strong> 월 최대 200만원<br>
+                        <strong>7개월~:</strong> 월 최대 160만원<br>
+                        <strong>특징:</strong> 사후지급금 폐지, 전액 즉시 지급
+                    </div>
+                    <a href="https://1350.moel.go.kr/home/hp/counsel/csinfo.do?cs_idx=7" class="btn-apply">👉육아휴직 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👨‍👩‍👧 6+6 부모육아휴직제</h3>
+                    <p>
+                        부모가 함께 육아휴직을 사용하면 첫 6개월간 급여가 대폭 인상됩니다.
+                        2025년부터 첫 달 상한액이 250만원으로 인상되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>1개월:</strong> 250만원<br>
+                        <strong>2개월:</strong> 250만원<br>
+                        <strong>3개월:</strong> 300만원<br>
+                        <strong>4개월:</strong> 350만원<br>
+                        <strong>5개월:</strong> 400만원<br>
+                        <strong>6개월:</strong> 450만원<br>
+                        <strong>조건:</strong> 생후 18개월 이내 부모 동시 또는 순차 사용
+                    </div>
+                    <a href="https://1350.moel.go.kr/home/hp/counsel/csinfo.do?cs_idx=7" class="btn-apply">👉6+6 제도 안내</a>
+                </div>
+                
+
+                <div class="policy-card">
+                    <h3>⏰ 육아휴직 기간 연장 (신설)</h3>
+                    <p>
+                        2025년 2월 23일부터 부모가 모두 3개월 이상 육아휴직을 사용하면
+                        육아휴직 기간이 최대 1년 6개월로 연장됩니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>기간:</strong> 최대 1년 6개월 (기존 1년)<br>
+                        <strong>조건:</strong> 부모 모두 3개월 이상 사용<br>
+                        <strong>분할:</strong> 3회까지 가능 (기존 2회)<br>
+                        <strong>최소기간:</strong> 14일부터 가능 (기존 30일)<br>
+                        <strong>통합신청:</strong> 출산휴가와 동시 신청 가능
+                    </div>
+                    <a href="https://metapay.co.kr/blog/2025-law-payroll/" class="btn-apply">👉육아휴직 기간연장</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏫 어린이집 보육료 지원</h3>
+                    <p>
+                        어린이집을 이용하는 0~2세 아동에게 소득 무관 전액 보육료를 지원합니다.
+                        국민행복카드로 결제할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>0세:</strong> 월 567,000원 (2025년 하반기 기준)<br>
+                        <strong>1세:</strong> 월 500,000원 (2025년 하반기 기준)<br>
+                        <strong>대상:</strong> 어린이집 이용 아동 (소득무관)
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003250&wlfareInfoReldBztpCd=01" class="btn-apply">👉어린이집 보육료 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⏰ 육아기 근로시간 단축</h3>
+                    <p>
+                        육아휴직 대신 근로시간을 단축하여 일과 육아를 병행할 수 있습니다.
+                        2025년부터 지원이 대폭 확대되었습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상연령:</strong> 만 12세 이하 (초6까지)<br>
+                        <strong>기간:</strong> 최대 36개월<br>
+                        <strong>급여:</strong> 주 10시간 단축 시 월 최대 55만원
+                    </div>
+                    <a href="https://www.worklife.kr/website/index/m5/bonus4.asp" class="btn-apply">👉근로시간 단축 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 유아기 (2~7세) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🧒 유아기 (2~7세)</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💰 아동수당</h3>
+                    <p>
+                        만 8세 미만(초등학교 2학년 이하) 모든 아동에게 소득 무관하게
+                        매월 10만원의 수당을 지급합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원금액:</strong> 월 10만원<br>
+                        <strong>대상:</strong> 만 0~7세 아동 (소득무관)<br>
+                        <strong>지급일:</strong> 매월 25일
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001171" class="btn-apply">👉아동수당 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏠 가정양육수당</h3>
+                    <p>
+                        어린이집이나 유치원을 이용하지 않고 가정에서 양육하는 경우
+                        월 10만원의 양육수당을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원금액:</strong> 월 10만원<br>
+                        <strong>대상:</strong> 24개월~취학 전 미취학 아동<br>
+                        <strong>특징:</strong> 보육시설 미이용 가정
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003253" class="btn-apply">👉가정 양육수당 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎓 누리과정 지원 (3~5세)</h3>
+                    <p>
+                        유치원이나 어린이집을 이용하는 3~5세 아동에게
+                        소득 무관하게 월 28만원을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원금액:</strong> 월 280,000원<br>
+                        <strong>대상:</strong> 3~5세 유치원·어린이집 이용 아동<br>
+                        <strong>특징:</strong> 소득무관 전액 지원
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000969" class="btn-apply">👉누리과정 지원 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👶 아이돌봄 서비스</h3>
+                    <p>
+                        만 12세 이하 아동을 대상으로 아이돌보미가 가정으로 방문하여
+                        돌봄 서비스를 제공합니다. 소득에 따라 차등 지원됩니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>서비스:</strong> 시간제, 종일제 돌봄<br>
+                        <strong>지원:</strong> 소득별 차등 지원 (15%~90%)<br>
+                        <strong>대상:</strong> 만 12세 이하 아동
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000024" class="btn-apply">👉아이돌봄 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💳 자녀장려금</h3>
+                    <p>
+                        저소득 가구의 양육비 부담을 경감하기 위해 소득과 자녀 수에 따라
+                        장려금을 지급합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 부부합산 연소득 7천만원 미만<br>
+                        <strong>지원:</strong> 자녀 1인당 최대 100만원<br>
+                        <strong>특징:</strong> 자녀세액공제와 중복 불가
+                    </div>
+                    <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7782&mi=2451" class="btn-apply">👉자녀장려금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏥 영유아 건강검진</h3>
+                    <p>
+                        생후 4개월부터 71개월까지 총 8회의 무료 건강검진을 받을 수 있습니다.
+                        구강검진 3회도 포함됩니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>횟수:</strong> 총 8회 (구강 3회 포함)<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>내용:</strong> 성장 발달 평가 및 건강상담
+                    </div>
+                    <a href="https://www.nhis.or.kr/nhis/healthin/wbhaca04800m01.do" class="btn-apply">👉영유아 건강검진 안내</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>보건복지상담센터:</strong> 국번없이 <a href="tel:129">129</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>임신육아종합포털 아이사랑:</strong> <a href="https://www.childcare.go.kr/">www.childcare.go.kr</a></p>
+            <p><strong>고용노동부 일·생활균형:</strong> <a href="https://www.worklife.kr/">www.worklife.kr</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었으며, 최신 정책 변경사항을 반영하였습니다.<br>
+                ※ <strong>2025년 주요 변경사항:</strong> 제왕절개 본인부담금 무료화, 배우자 출산휴가 20일 확대, 
+                   혼인신고 세액공제 신설, 육아휴직 기간 연장, 난임시술 지원 확대<br>
+                ※ 지원 내용 및 신청 방법은 정책별로 상이할 수 있으며, 지자체별 추가 지원이 있을 수 있습니다.<br>
+                ※ 최신 정보는 각 정책의 공식 웹사이트에서 확인하시기 바랍니다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
