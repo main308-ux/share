@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 중장년 (35~64세) 정부 지원 혜택</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            padding: 40px 0 !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #667eea !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #667eea !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #667eea !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .new-badge {
+            display: inline-block !important;
+            background: #ff4757 !important;
+            color: white !important;
+            padding: 3px 8px !important;
+            border-radius: 5px !important;
+            font-size: 0.8rem !important;
+            font-weight: bold !important;
+            margin-left: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #ffffff !important;
+            padding: 40px !important;
+            margin: 40px 40px 0 40px !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .footer h3 {
+            color: #667eea !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.4rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>💼 2025 중장년 (35~64세) 정부 지원 혜택</h2>
+            <p>
+                일과 가정, 노후 준비까지 책임져야 하는 중장년층!<br>
+                정부가 여러분의 든든한 버팀목이 되어드립니다.<br>
+                취업·재취업 지원부터 건강검진, 평생교육, 소득지원까지<br>
+                중장년을 위한 맞춤형 혜택을 한눈에 확인하세요.
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>📋 2025년 중장년 지원 주요 특징</h4>
+            <ul>
+                <li><strong>NEW!</strong> 중장년 경력지원제 신설 (2025년 3월, 월 150만원 지원)</li>
+                <li>신중년 적합직무 고용장려금으로 기업 채용 활성화</li>
+                <li>신중년(만 40~64세) 맞춤형 취업 지원 강화</li>
+                <li>국가건강검진 항목 확대 (C형간염, 골다공증 등)</li>
+                <li>국민취업지원제도로 월 50만원씩 최대 6개월 지원</li>
+                <li>실업급여 하한액 인상으로 생활안정 지원 확대</li>
+                <li>평생교육바우처 지원인원 10만명으로 확대</li>
+                <li>근로장려금으로 저소득 근로자 실질소득 지원</li>
+            </ul>
+        </div>
+        
+        <!-- 취업·고용 지원 (35~64세 전체) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💼 취업·고용 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🔄 중장년 경력지원제<span class="new-badge">NEW</span></h3>
+                    <p>
+                        사무직 등 주된 업무에서 퇴직한 중장년이 경력전환에 도움이 되는 
+                        일경험을 통해 취업가능성을 높이도록 돕는 취업지원 프로그램입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 50세 이상, 자격 취득 또는 직업훈련 이수자<br>
+                        <strong>참여수당:</strong> 월 최대 150만원 (1~3개월)<br>
+                        <strong>기업지원:</strong> 운영수당 1인당 월 40만원<br>
+                        <strong>지원내용:</strong> 직무교육, 현장실습, 멘토링<br>
+                        <strong>특징:</strong> 2025년 3월 시행, 전기·소방·사회복지사 등 숙련 필요 분야
+                    </div>
+                    <a href="https://www.moel.go.kr/news/notice/noticeView.do?bbs_seq=20250301002" class="btn-apply">👉중장년 경력지원제 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎯 신중년 적합직무 고용장려금</h3>
+                    <p>
+                        만 50세 이상 구직자를 신중년 적합직무에 채용하는 기업에
+                        인건비를 지원하여 중장년 재취업을 촉진합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 50세 이상 구직자를 적합직무에 채용한 기업<br>
+                        <strong>지원금액:</strong> 우선지원대상기업 월 80만원, 중견기업 월 40만원<br>
+                        <strong>지원기간:</strong> 3개월 단위로 최대 1년 (총 최대 960만원)<br>
+                        <strong>적합직무:</strong> 경영진단, 전기기술자, 건설기술 등 70개 직무
+                    </div>
+                    <a href="https://www.work24.go.kr" class="btn-apply">👉신중년 적합직무 고용장려금 (고용24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎯 국민취업지원제도 (Ⅰ유형)</h3>
+                    <p>
+                        저소득 구직자에게 취업지원서비스와 함께 구직촉진수당을 지급하여
+                        생계 안정과 재취업을 동시에 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 35~69세, 가구 중위소득 60% 이하, 재산 4억 원 이하<br>
+                        <strong>지원금액:</strong> 월 50만원씩 최대 6개월 (총 300만원)<br>
+                        <strong>추가혜택:</strong> 취업성공수당 최대 150만원
+                    </div>
+                    <a href="https://www.work24.go.kr/ua/z/z/1300/selectEmssRqutIntro.do" class="btn-apply">👉국민취업지원제도 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💪 고령자 고용지원금</h3>
+                    <p>
+                        만 60세 이상 고령자를 추가로 채용한 기업에게 인건비를 지원하여
+                        고령자의 고용을 촉진합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 60세 이상 고령자를 추가 채용한 기업<br>
+                        <strong>지원기업:</strong> 우선지원대상기업 및 중견기업<br>
+                        <strong>기업지원:</strong> 1인당 분기별 일정액 지원<br>
+                        <strong>신청:</strong> 연 1회 공고를 통해 신청
+                    </div>
+                    <a href="https://www.work24.go.kr" class="btn-apply">👉고령자 고용지원금 안내 (고용24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⏰ 정년연장·재고용 지원금 (고령자 계속고용장려금)</h3>
+                    <p>
+                        정년을 연장하거나 정년퇴직자를 재고용하는 기업을 지원하여
+                        숙련된 중장년 인력의 고용을 유지합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>지원금액:</strong> 근로자 1인당 월 30만원<br>
+                        <strong>지원기간:</strong> 최대 3년 (총 1,080만원, 2024년부터 연장)<br>
+                        <strong>대상:</strong> 정년연장·폐지 또는 재고용 제도 운영 중소·중견기업<br>
+                        <strong>특징:</strong> 2020년 시행, 2024년부터 지원기간 2년→3년 확대
+                    </div>
+                    <a href="https://www.work24.go.kr" class="btn-apply">👉고령자 계속고용장려금 (고용24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎓 중장년 내일센터</h3>
+                    <p>
+                        만 40세 이상 중장년에게 생애경력설계, 전직지원, 재취업 등을
+                        체계적으로 지원하는 원스톱 지원 기관입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 40세 이상 재직자·퇴직(예정)자<br>
+                        <strong>서비스:</strong> 생애경력설계, 전직 컨설팅, 재취업 지원<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>전국:</strong> 17개 권역 운영
+                    </div>
+                    <a href="https://www.work24.go.kr/wk/u/a/1000/seniorCenterInfo.do" class="btn-apply">👉중장년 내일센터 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💳 실업급여</h3>
+                    <p>
+                        고용보험 가입 근로자가 비자발적으로 실직했을 때
+                        재취업 활동 기간 동안 생계를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>자격:</strong> 이직 전 18개월간 고용보험 180일 이상 가입<br>
+                        <strong>하한액:</strong> 일 64,192원 (월 약 192만원)<br>
+                        <strong>상한액:</strong> 일 66,000원 (월 약 198만원)<br>
+                        <strong>기간:</strong> 120일~270일 (연령·가입기간별 차등)<br>
+                        <strong>특징:</strong> 2025년 하한액 인상
+                    </div>
+                    <a href="https://www.ei.go.kr/ei/eih/cm/hm/main.do" class="btn-apply">👉실업급여 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 교육·자기계발 (35~64세) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>📚 교육·자기계발 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💼 국민내일배움카드</h3>
+                    <p>
+                        직업능력개발 훈련을 원하는 국민 누구나 신청 가능한 직업훈련 지원 카드로
+                        다양한 분야의 교육을 저렴하게 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15세 이상 국민 (공무원 등 일부 제외)<br>
+                        <strong>지원금액:</strong> 5년간 300~500만원<br>
+                        <strong>본인부담:</strong> 훈련비의 15~45% (소득에 따라 차등)<br>
+                        <strong>훈련분야:</strong> IT, 디자인, 마케팅, 자격증 등 전 분야
+                    </div>
+                    <a href="https://www.hrd.go.kr/hrdp/ma/pmmao/indexNew.do" class="btn-apply">👉내일배움카드 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎓 평생교육바우처</h3>
+                    <p>
+                        기초생활수급자 및 차상위계층을 대상으로 평생교육 수강료를 지원하여
+                        자기계발과 재기의 기회를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 19세 이상, 기초생활수급자·차상위·중위소득 65% 이하<br>
+                        <strong>지원금액:</strong> 연 35만원 (우수 이용자 최대 70만원)<br>
+                        <strong>2025년:</strong> 지원인원 10만명으로 확대<br>
+                        <strong>사용처:</strong> 등록된 평생교육기관 수강료 및 교재비
+                    </div>
+                    <a href="https://www.lllcard.kr/web/intro/introPageLink.do" class="btn-apply">👉평생교육바우처 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👴 노인 평생교육바우처 (65세 이상)</h3>
+                    <p>
+                        만 65세 이상 저소득 어르신에게 평생교육 기회를 제공하여
+                        건강한 노년 생활을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 기초생활수급자·차상위계층<br>
+                        <strong>지원금액:</strong> 연 35만원<br>
+                        <strong>지원인원:</strong> 연 8,000명<br>
+                        <strong>특징:</strong> 노인 맞춤형 교육프로그램
+                    </div>
+                    <a href="https://www.lllcard.kr/web/intro/introPageLink.do" class="btn-apply">👉노인 평생교육바우처</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 건강 지원 (35~64세) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏥 건강검진 및 의료 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🔍 국가건강검진</h3>
+                    <p>
+                        만 20세 이상 성인을 대상으로 2년마다 무료 건강검진을 제공하여
+                        질병을 조기에 발견하고 예방합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 20세 이상 (2025년은 홀수년생)<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>검진항목:</strong> 신체계측, 혈압, 혈액검사, 흉부방사선 등<br>
+                        <strong>추가검사:</strong> 연령별 암검진 포함
+                    </div>
+                    <a href="https://www.nhis.or.kr/nhis/healthin/wbhaca04500m01.do" class="btn-apply">👉건강검진 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🧬 C형간염 항체검사<span class="new-badge">NEW</span></h3>
+                    <p>
+                        2025년부터 만 56세를 대상으로 C형간염 항체검사를 실시하여
+                        간암으로 이어질 수 있는 C형간염을 조기 발견합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 56세 (2025년부터 시행)<br>
+                        <strong>검사내용:</strong> C형간염 항체검사<br>
+                        <strong>확진검사:</strong> 양성 시 확진검사비 본인부담금 전액 지원<br>
+                        <strong>비용:</strong> 전액 무료
+                    </div>
+                    <a href="https://www.nhis.or.kr/nhis/healthin/wbhaca04500m01.do" class="btn-apply">👉C형간염 검진 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🦴 골다공증 검사 확대</h3>
+                    <p>
+                        여성의 골다공증 조기 발견을 위해 검사 대상 연령을 확대하여
+                        중년 여성의 뼈 건강을 지킵니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 54세, 60세, 66세 여성 (2025년 60세 추가)<br>
+                        <strong>검사내용:</strong> 골밀도 검사<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>특징:</strong> 2025년부터 60세 연령 신설
+                    </div>
+                    <a href="https://www.nhis.or.kr/nhis/healthin/wbhaca04500m01.do" class="btn-apply">👉골다공증 검사 안내</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 소득 지원 (35~64세) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💰 소득·생활 안정 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💵 근로장려금</h3>
+                    <p>
+                        저소득 근로자, 사업자 가구에게 근로를 장려하고 실질소득을 지원하여
+                        빈곤 탈출을 돕는 근로연계형 소득지원 제도입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>소득요건:</strong> 단독 2,200만원, 홑벌이 3,200만원, 맞벌이 4,400만원 미만<br>
+                        <strong>재산요건:</strong> 가구원 재산 합계 2억4천만원 미만<br>
+                        <strong>지원금액:</strong> 단독 최대 165만원, 홑벌이 285만원, 맞벌이 330만원<br>
+                        <strong>신청기간:</strong> 정기 5.1~5.31, 반기 3.1~3.15/9.1~9.15
+                    </div>
+                    <a href="https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml" class="btn-apply">👉근로장려금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👨‍👩‍👧 자녀장려금</h3>
+                    <p>
+                        저소득 가구의 양육비 부담을 경감하기 위해 소득과 자녀 수에 따라
+                        장려금을 지급하여 출산을 장려합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>소득요건:</strong> 부부합산 총소득 7천만원 미만<br>
+                        <strong>재산요건:</strong> 가구원 재산 합계 2억4천만원 미만<br>
+                        <strong>지원금액:</strong> 자녀 1인당 최대 100만원<br>
+                        <strong>대상자녀:</strong> 만 18세 미만 부양자녀
+                    </div>
+                    <a href="https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml" class="btn-apply">👉자녀장려금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏠 기초연금 (만 65세 이상)</h3>
+                    <p>
+                        만 65세 이상 소득 하위 70% 어르신에게 매월 기초연금을 지급하여
+                        안정적인 노후 생활을 보장합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상, 소득인정액 기준 충족<br>
+                        <strong>소득기준:</strong> 단독 228만원, 부부 364.8만원 이하<br>
+                        <strong>지급액:</strong> 단독 최대 34.4만원, 부부 최대 55만원<br>
+                        <strong>지급일:</strong> 매월 25일
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001172" class="btn-apply">👉기초연금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💼 노인일자리 사업 (만 60세 이상)</h3>
+                    <p>
+                        활기찬 노후생활을 위해 어르신 일자리를 제공하고
+                        사회참여 기회를 확대합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 60세 이상 (일부 유형 65세 이상)<br>
+                        <strong>2025년:</strong> 역대 최대 109만 8천개 일자리<br>
+                        <strong>공익활동:</strong> 월 29만원 (월 30시간 이내)<br>
+                        <strong>사회서비스:</strong> 월 76만원 (월 60시간)<br>
+                        <strong>민간일자리:</strong> 최저임금 이상
+                    </div>
+                    <a href="https://www.k-seniority.or.kr/main/main.do" class="btn-apply">👉노인일자리 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🚗 긴급복지지원</h3>
+                    <p>
+                        갑작스러운 위기상황으로 생계유지가 곤란한 가구에게
+                        신속하게 생계비, 의료비, 주거비 등을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 주소득자 사망·실직·질병 등 위기상황 가구<br>
+                        <strong>지원내용:</strong> 생계비, 의료비, 주거비, 교육비 등<br>
+                        <strong>특징:</strong> 신속 지원 (선지원 후심사)<br>
+                        <strong>기간:</strong> 최대 6개월
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000209" class="btn-apply">👉긴급복지지원 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 노후 준비 (50세 이상) -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🌅 노후 준비 지원 (50세 이상)</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💰 국민연금 노후준비서비스</h3>
+                    <p>
+                        국민연금공단에서 제공하는 무료 재무설계 상담으로
+                        체계적인 노후 준비를 도와드립니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 노후준비에 관심 있는 모든 국민<br>
+                        <strong>서비스:</strong> 재무, 건강, 여가, 대인관계 상담<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>방법:</strong> 방문, 전화, 온라인 상담
+                    </div>
+                    <a href="https://csa.nps.or.kr/main.do" class="btn-apply">👉노후준비서비스 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎯 50+ 인생설계 지원사업</h3>
+                    <p>
+                        서울시 등 지자체에서 운영하는 50세 이상을 위한
+                        인생 재설계 프로그램입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 50세 이상 시민<br>
+                        <strong>프로그램:</strong> 생애설계 상담, 직업교육, 일자리 연계<br>
+                        <strong>운영:</strong> 50+ 캠퍼스, 복지관 등<br>
+                        <strong>비용:</strong> 무료 또는 저렴한 비용
+                    </div>
+                    <a href="https://www.50plus.or.kr/org/detail.do" class="btn-apply">👉50+ 사업 안내</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>보건복지상담센터:</strong> 국번없이 <a href="tel:129">129</a></p>
+            <p><strong>고용노동부 상담센터:</strong> 국번없이 <a href="tel:1350">1350</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>고용24 (워크넷):</strong> <a href="https://www.work24.go.kr/">www.work24.go.kr</a></p>
+            <p><strong>중장년내일센터:</strong> <a href="https://www.work24.go.kr/wk/u/a/1000/seniorCenterInfo.do">센터 찾기</a> / 중장년456내일센터 070-5223-4384</p>
+            <p><strong>국민건강보험공단:</strong> <a href="https://www.nhis.or.kr/">www.nhis.or.kr</a></p>
+            <p><strong>국세청 홈택스:</strong> <a href="https://www.hometax.go.kr/">www.hometax.go.kr</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었으며, 최신 정책 변경사항을 반영하였습니다.<br>
+                ※ <strong>2025년 주요 변경사항:</strong><br>
+                • <strong>NEW!</strong> 중장년 경력지원제 신설 (2025년 3월, 월 150만원 지원)<br>
+                • 신중년 적합직무 고용장려금으로 50세 이상 채용 기업 지원<br>
+                • 고령자 계속고용장려금 지원기간 확대 (2년→3년, 최대 1,080만원)<br>
+                • 실업급여 하한액 인상 (일 64,192원)<br>
+                • C형간염 검진 신설 (만 56세)<br>
+                • 골다공증 검사 연령 확대 (60세 추가)<br>
+                • 평생교육바우처 인원 확대 (10만명)<br>
+                • 노인일자리 역대 최대 109만 8천개<br>
+                ※ 지원 내용 및 신청 방법은 정책별로 상이할 수 있으며, 지자체별 추가 지원이 있을 수 있습니다.<br>
+                ※ 최신 정보는 각 정책의 공식 웹사이트 또는 고용24(www.work24.go.kr), 복지로(www.bokjiro.go.kr)에서 확인하시기 바랍니다.<br>
+                ※ 모든 링크는 2025년 10월 기준 유효한 공식 사이트입니다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
