@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 노인·어르신 (만 65세 이상) 정부 지원 혜택</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            padding: 40px 0 !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #667eea !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #667eea !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #667eea !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .new-badge {
+            display: inline-block !important;
+            background: #ff4757 !important;
+            color: white !important;
+            padding: 3px 8px !important;
+            border-radius: 5px !important;
+            font-size: 0.8rem !important;
+            font-weight: bold !important;
+            margin-left: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #ffffff !important;
+            padding: 40px !important;
+            margin: 40px 40px 0 40px !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .footer h3 {
+            color: #667eea !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.4rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>👴👵 2025 노인·어르신 (만 65세 이상) 정부 지원 혜택</h2>
+            <p>
+                건강하고 행복한 노후생활을 위한 든든한 파트너!<br>
+                대한민국 정부가 어르신들의 활기찬 노후를 위해<br>
+                소득·건강·일자리·교통·문화 등 전방위적으로<br>
+                맞춤형 혜택을 지원합니다.
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>📋 2025년 노인복지 주요 특징</h4>
+            <ul>
+                <li>기초연금 인상 (단독 최대 34.4만원, 부부 최대 55만원)</li>
+                <li>노인일자리 역대 최대 109만 8천개 제공 (예산 2조 1,847억원)</li>
+                <li>치매 치료관리비 지원 소득기준 확대 (중위소득 120%→140%)</li>
+                <li>노인 평생교육바우처 신설 (연 8,000명, 35만원 지원)</li>
+                <li>장기요양보험 수가 3.93% 인상</li>
+                <li>틀니·임플란트 본인부담률 30% 유지</li>
+                <li>지하철·전철 무료, KTX·SRT 30% 할인</li>
+                <li>예방접종 무료 (독감·폐렴·코로나·대상포진)</li>
+            </ul>
+        </div>
+        
+        <!-- 소득 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💰 소득 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🏠 기초연금<span class="new-badge">인상</span></h3>
+                    <p>
+                        만 65세 이상 소득 하위 70% 어르신에게 매월 기초연금을 지급하여
+                        안정적인 노후 생활을 보장합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상, 소득인정액 기준 충족<br>
+                        <strong>소득기준:</strong> 단독 228만원, 부부 364.8만원 이하<br>
+                        <strong>지급액:</strong> 단독 최대 34.4만원, 부부 최대 55만원<br>
+                        <strong>지급일:</strong> 매월 25일<br>
+                        <strong>특징:</strong> 2025년 인상, 2028년까지 단계적으로 40만원까지 인상 예정
+                    </div>
+                    <a href="http://basicpension.mohw.go.kr/" class="btn-apply">👉기초연금 신청 (기초연금 공식사이트)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💼 노인일자리 사업<span class="new-badge">확대</span></h3>
+                    <p>
+                        활기찬 노후생활을 위해 어르신 일자리를 제공하고
+                        사회참여 기회를 확대합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 60세 이상 (일부 유형 65세 이상)<br>
+                        <strong>2025년:</strong> 역대 최대 109만 8천개 일자리 (예산 2조 1,847억원)<br>
+                        <strong>공익활동형:</strong> 65세 이상, 월 29만원 (월 30시간)<br>
+                        <strong>사회서비스형:</strong> 65세 이상, 월 76만원 (월 60시간)<br>
+                        <strong>민간일자리형:</strong> 60세 이상, 최저임금 이상
+                    </div>
+                    <a href="https://www.seniorro.or.kr:4431/noin/main.do" class="btn-apply">👉노인일자리 신청 (노인일자리여기)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💵 근로장려금</h3>
+                    <p>
+                        저소득 근로자, 사업자 가구에게 근로를 장려하고 실질소득을 지원하여
+                        빈곤 탈출을 돕는 근로연계형 소득지원 제도입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>소득요건:</strong> 단독 2,200만원, 홑벌이 3,200만원, 맞벌이 4,400만원 미만<br>
+                        <strong>재산요건:</strong> 가구원 재산 합계 2억4천만원 미만<br>
+                        <strong>지원금액:</strong> 단독 최대 165만원, 홑벌이 285만원, 맞벌이 330만원<br>
+                        <strong>신청기간:</strong> 정기 5.1~5.31, 반기 3.1~3.15/9.1~9.15
+                    </div>
+                    <a href="https://www.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml" class="btn-apply">👉근로장려금 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💳 실업급여</h3>
+                    <p>
+                        고용보험 가입 근로자가 비자발적으로 실직했을 때
+                        재취업 활동 기간 동안 생계를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>자격:</strong> 이직 전 18개월간 고용보험 180일 이상 가입<br>
+                        <strong>하한액:</strong> 일 64,192원 (월 약 192만원)<br>
+                        <strong>상한액:</strong> 일 66,000원 (월 약 198만원)<br>
+                        <strong>기간:</strong> 120일~270일 (연령·가입기간별 차등)<br>
+                        <strong>특징:</strong> 2025년 하한액 인상
+                    </div>
+                    <a href="https://www.ei.go.kr/ei/eih/cm/hm/main.do" class="btn-apply">👉실업급여 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 건강·의료 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏥 건강·의료 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🔍 국가건강검진</h3>
+                    <p>
+                        만 20세 이상 성인을 대상으로 2년마다 무료 건강검진을 제공하여
+                        질병을 조기에 발견하고 예방합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 20세 이상 (2025년은 홀수년생)<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>검진항목:</strong> 신체계측, 혈압, 혈액검사, 흉부방사선 등<br>
+                        <strong>추가검사:</strong> 연령별 암검진 포함 (위암, 대장암, 간암, 폐암 등)
+                    </div>
+                    <a href="https://www.nhis.or.kr/nhis/healthin/wbhaca04500m01.do" class="btn-apply">👉건강검진 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🦷 틀니·임플란트 지원</h3>
+                    <p>
+                        만 65세 이상 어르신의 구강 건강을 위해
+                        틀니와 임플란트 비용의 70%를 건강보험으로 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 건강보험 가입자<br>
+                        <strong>틀니:</strong> 본인부담률 30% (완전틀니, 부분틀니)<br>
+                        <strong>임플란트:</strong> 평생 2개까지 본인부담률 30%<br>
+                        <strong>비용예시:</strong> 임플란트 1개당 평균 130만원 → 본인부담 약 40만원<br>
+                        <strong>신청:</strong> 건강보험 적용 치과에서 진료 시 자동 적용
+                    </div>
+                    <a href="https://www.nhis.or.kr/" class="btn-apply">👉건강보험공단 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💉 예방접종 무료 지원</h3>
+                    <p>
+                        만 65세 이상 어르신을 대상으로 각종 예방접종을 무료로 제공하여
+                        감염병으로부터 건강을 지킵니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>독감:</strong> 매년 무료 접종<br>
+                        <strong>폐렴:</strong> 23가 다당질 백신 무료 접종<br>
+                        <strong>코로나19:</strong> 무료 접종<br>
+                        <strong>대상포진:</strong> 일부 지자체 무료 접종 (전국 확대 예정)<br>
+                        <strong>신청:</strong> 가까운 보건소 또는 지정 의료기관
+                    </div>
+                    <a href="https://nip.kdca.go.kr/" class="btn-apply">👉예방접종 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🧠 치매국가책임제</h3>
+                    <p>
+                        치매 조기 발견부터 치료, 돌봄까지 국가가 책임지는
+                        통합적인 치매 관리 지원 제도입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 60세 이상 치매환자 및 가족<br>
+                        <strong>조기검진:</strong> 보건소 무료 선별검사, 진단검사비 지원<br>
+                        <strong>치료관리비:</strong> 월 최대 3만원 (연 36만원, 중위소득 140% 이하)<br>
+                        <strong>치매안심센터:</strong> 전국 256개 운영, 상담·교육·쉼터 제공<br>
+                        <strong>치매상담콜센터:</strong> ☎1899-9988 (24시간 상담)
+                    </div>
+                    <a href="https://www.edementia.or.kr/" class="btn-apply">👉치매안심센터 찾기 (중앙치매센터)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏨 노인장기요양보험<span class="new-badge">수가인상</span></h3>
+                    <p>
+                        일상생활이 어려운 노인에게 신체활동 및 가사활동 지원,
+                        요양시설 이용 등 장기요양 서비스를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 또는 노인성 질환자<br>
+                        <strong>등급:</strong> 1~5등급, 인지지원등급 (총 6개 등급)<br>
+                        <strong>본인부담:</strong> 재가급여 15%, 시설급여 20% (소득별 감경)<br>
+                        <strong>2025년:</strong> 수가 3.93% 인상, 요양보호사 인력배치 강화<br>
+                        <strong>서비스:</strong> 방문요양, 방문목욕, 주야간보호, 시설급여 등<br>
+                        <strong>신청:</strong> 국민건강보험공단 지사 또는 온라인
+                    </div>
+                    <a href="https://www.longtermcare.or.kr/" class="btn-apply">👉장기요양보험 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💊 노인맞춤돌봄서비스</h3>
+                    <p>
+                        혼자 생활하기 어려운 어르신에게 안전확인, 생활교육,
+                        사회참여, 일상생활 지원 등 맞춤형 돌봄 서비스를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 기초수급자, 차상위, 기초연금수급자 중 돌봄필요자<br>
+                        <strong>서비스:</strong> 안전지원, 사회참여, 생활교육, 일상생활지원<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터 또는 가까운 노인복지관
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉돌봄서비스 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 교통·이동 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🚇 교통·이동 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🚇 지하철·전철 무료</h3>
+                    <p>
+                        만 65세 이상 어르신은 우대용 교통카드 발급 시
+                        전국 지하철·전철을 무료로 이용할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>무료구간:</strong> 수도권 지하철·전철, 광역철도, 공항철도(일부)<br>
+                        <strong>카드발급:</strong> 주민센터, 지하철역 고객센터, 일부 은행<br>
+                        <strong>발급서류:</strong> 신분증<br>
+                        <strong>특징:</strong> 발급 후 익일부터 사용 가능, 환승 가능
+                    </div>
+                    <a href="https://news.seoul.go.kr/traffic/archives/1791" class="btn-apply">👉우대용 교통카드 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🚌 버스 요금 감면</h3>
+                    <p>
+                        지역에 따라 시내버스 무료 또는 할인 혜택을 받을 수 있으며,
+                        일부 지역은 마을버스도 무료입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 (일부 지역 70세 이상)<br>
+                        <strong>서울·수도권:</strong> 유료 (지하철 무료 환승 시 환승할인)<br>
+                        <strong>대구·대전:</strong> 만 70세 이상 무료<br>
+                        <strong>충남·경북:</strong> 만 70세 이상 무료 (2025년)<br>
+                        <strong>제주·영동·청송:</strong> 전 연령 무료<br>
+                        <strong>특징:</strong> 지역별 상이, 거주지 확인 필수
+                    </div>
+                    <a href="https://www.gov.kr/" class="btn-apply">👉지역별 버스 무료화 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🚄 KTX·SRT 30% 할인</h3>
+                    <p>
+                        만 65세 이상 어르신은 KTX, SRT 등 고속철도 및 일반열차를
+                        평일 한정 30% 할인받아 이용할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>KTX·새마을호·무궁화호:</strong> 30% 할인<br>
+                        <strong>SRT:</strong> 30% 할인<br>
+                        <strong>ITX 등:</strong> 30% 할인<br>
+                        <strong>적용기간:</strong> 월~금요일 (주말·공휴일 제외)<br>
+                        <strong>예매:</strong> 코레일 홈페이지, 앱, 역 창구 (신분증 필요)
+                    </div>
+                    <a href="https://www.letskorail.com/" class="btn-apply">👉코레일 예매</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>✈️ 항공·여객선 할인</h3>
+                    <p>
+                        국내선 항공편과 연안여객선 이용 시
+                        요금 할인 혜택을 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>대한항공:</strong> 국내선·국제선 10% 할인 (일부 제외)<br>
+                        <strong>국내연안여객선:</strong> 여객운임 20~50% 할인<br>
+                        <strong>이용방법:</strong> 항공권 예매 시 신분증 제시<br>
+                        <strong>특징:</strong> 성수기 및 일부 노선 제외
+                    </div>
+                    <a href="https://www.koreanair.com/" class="btn-apply">👉항공사 홈페이지</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 문화·여가 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🎨 문화·여가 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🏛️ 공공시설 무료·할인</h3>
+                    <p>
+                        만 65세 이상 어르신은 전국의 국립·공립 문화시설을
+                        무료 또는 할인된 가격으로 이용할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>무료시설:</strong> 고궁, 능원, 국립박물관, 국립공원 등<br>
+                        <strong>할인시설:</strong> 공립미술관, 공립박물관, 공원 등<br>
+                        <strong>이용방법:</strong> 신분증 또는 경로우대 교통카드 제시<br>
+                        <strong>특징:</strong> 일부 특별전은 유료일 수 있음
+                    </div>
+                    <a href="https://www.mcst.go.kr/" class="btn-apply">👉문화체육관광부 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎓 노인 평생교육바우처<span class="new-badge">NEW</span></h3>
+                    <p>
+                        기초생활수급자 및 차상위계층 어르신에게
+                        평생교육 수강료를 지원하여 학습 기회를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 기초생활수급자·차상위계층<br>
+                        <strong>지원금액:</strong> 연 35만원<br>
+                        <strong>지원인원:</strong> 연 8,000명<br>
+                        <strong>사용처:</strong> 등록된 평생교육기관 수강료 및 교재비<br>
+                        <strong>특징:</strong> 2025년 신설, 노인 맞춤형 교육프로그램
+                    </div>
+                    <a href="https://www.lllcard.kr/web/intro/introPageLink.do" class="btn-apply">👉노인 평생교육바우처</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏋️ 시니어 친화형 국민체육센터<span class="new-badge">확대</span></h3>
+                    <p>
+                        노인들의 건강 증진과 여가 활동을 위한
+                        시니어 친화형 체육시설을 대폭 확충합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 지역주민 (노인 우선)<br>
+                        <strong>2025년:</strong> 기존 8곳 → 20곳으로 확대<br>
+                        <strong>시설:</strong> 탁구, 배드민턴, 게이트볼 등 노인 친화 종목<br>
+                        <strong>특징:</strong> 접근성 우수, 무장애 설계<br>
+                        <strong>이용:</strong> 지역 체육센터 확인
+                    </div>
+                    <a href="https://www.sports.or.kr/" class="btn-apply">👉국민체육진흥공단</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📚 경로당 지원 강화<span class="new-badge">인상</span></h3>
+                    <p>
+                        경로당 운영비를 지원하여 어르신들의
+                        여가 및 친목 활동을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>난방비:</strong> 월 6만원 (동절기)<br>
+                        <strong>양곡비:</strong> 월 21만원<br>
+                        <strong>특징:</strong> 2025년 단가 인상<br>
+                        <strong>혜택:</strong> 급식, 건강관리 프로그램, 여가활동 등<br>
+                        <strong>신청:</strong> 경로당 회장을 통한 신청
+                    </div>
+                    <a href="https://www.mohw.go.kr/" class="btn-apply">👉보건복지부 안내</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 주거·생활 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏡 주거·생활 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🏘️ 고령자 복지주택<span class="new-badge">확대</span></h3>
+                    <p>
+                        무장애 설계가 적용된 고령자 맞춤형 공공임대주택을 공급하고
+                        돌봄, 건강, 여가 등 복합 서비스를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 무주택자<br>
+                        <strong>2025년:</strong> 현 1,000가구 → 3,000가구로 3배 확대<br>
+                        <strong>특징:</strong> 무장애 설계, 복지서비스 연계, 저렴한 임대료<br>
+                        <strong>서비스:</strong> 돌봄, 건강, 여가 복합 서비스 시범 제공<br>
+                        <strong>신청:</strong> LH 청약센터
+                    </div>
+                    <a href="https://apply.lh.or.kr/" class="btn-apply">👉LH 청약센터</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🔌 에너지바우처</h3>
+                    <p>
+                        저소득 어르신 가구의 냉난방비 부담을 경감하기 위해
+                        전기·도시가스·지역난방·등유·LPG 구매비용을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 기초생활수급자, 차상위계층<br>
+                        <strong>지원금액:</strong> 여름 11.8만원, 겨울 30.1~44.4만원<br>
+                        <strong>신청기간:</strong> 5월~6월 (여름), 10월~11월 (겨울)<br>
+                        <strong>사용처:</strong> 전기·가스·난방비<br>
+                        <strong>문의:</strong> ☎1600-3190
+                    </div>
+                    <a href="https://www.energyv.or.kr/" class="btn-apply">👉에너지바우처 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📱 통신요금 감면</h3>
+                    <p>
+                        기초연금 수급자를 대상으로 이동통신요금을 할인하여
+                        통신비 부담을 경감합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기초연금 수급자<br>
+                        <strong>할인액:</strong> 월 최대 1만 1,000원<br>
+                        <strong>신청:</strong> 통신사 대리점 또는 고객센터<br>
+                        <strong>필요서류:</strong> 신분증, 기초연금 수급 확인서<br>
+                        <strong>적용:</strong> SKT, KT, LG U+ 등 주요 통신사
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉복지로 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🆘 독거노인 응급안전안심서비스<span class="new-badge">확대</span></h3>
+                    <p>
+                        혼자 사는 어르신의 안전을 위해 응급호출기를 보급하고
+                        24시간 안전을 확인합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상 독거노인, 장애인<br>
+                        <strong>2025년:</strong> 응급호출기 30만대 보급<br>
+                        <strong>서비스:</strong> 24시간 안전확인, 응급상황 대응<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터
+                    </div>
+                    <a href="https://www.mohw.go.kr/" class="btn-apply">👉독거노인 안전지원</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💳 ATM 수수료 면제</h3>
+                    <p>
+                        만 65세 이상 어르신은 6대 은행 ATM을
+                        수수료 없이 이용할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>혜택:</strong> 6대 은행 ATM 수수료 면제<br>
+                        <strong>적용시간:</strong> 은행 영업시간 내<br>
+                        <strong>은행:</strong> 국민, 신한, 하나, 우리, 농협, 기업은행<br>
+                        <strong>이용:</strong> ATM에서 신분증 또는 통장 확인 후 자동 적용
+                    </div>
+                    <a href="https://www.kfb.or.kr/" class="btn-apply">👉은행연합회 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🚗 긴급복지지원</h3>
+                    <p>
+                        갑작스러운 위기상황으로 생계유지가 곤란한 가구에게
+                        신속하게 생계비, 의료비, 주거비 등을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 주소득자 사망·실직·질병 등 위기상황 가구<br>
+                        <strong>지원내용:</strong> 생계비, 의료비, 주거비, 교육비 등<br>
+                        <strong>특징:</strong> 신속 지원 (선지원 후심사)<br>
+                        <strong>기간:</strong> 최대 6개월<br>
+                        <strong>신청:</strong> 읍·면·동 주민센터 또는 ☎129
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000209" class="btn-apply">👉긴급복지지원 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 교육·자기계발 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>📚 교육·디지털 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💼 국민내일배움카드</h3>
+                    <p>
+                        직업능력개발 훈련을 원하는 국민 누구나 신청 가능한 직업훈련 지원 카드로
+                        다양한 분야의 교육을 저렴하게 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15세 이상 국민 (공무원 등 일부 제외)<br>
+                        <strong>지원금액:</strong> 5년간 300~500만원<br>
+                        <strong>본인부담:</strong> 훈련비의 15~45% (소득에 따라 차등)<br>
+                        <strong>훈련분야:</strong> IT, 디자인, 마케팅, 자격증 등 전 분야
+                    </div>
+                    <a href="https://www.hrd.go.kr/hrdp/ma/pmmao/indexNew.do" class="btn-apply">👉내일배움카드 신청</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📱 노인 디지털 역량 교육<span class="new-badge">확대</span></h3>
+                    <p>
+                        어르신들의 디지털 소외를 해소하고 스마트폰, 키오스크 등
+                        디지털 기기 사용법을 무료로 교육합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 65세 이상<br>
+                        <strong>교육내용:</strong> 스마트폰 사용법, 키오스크, 인터넷 뱅킹 등<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>운영:</strong> 복지관, 경로당, 주민센터 등<br>
+                        <strong>신청:</strong> 가까운 복지관 또는 주민센터
+                    </div>
+                    <a href="https://www.nia.or.kr/" class="btn-apply">👉디지털 교육 안내</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💰 국민연금 노후준비서비스</h3>
+                    <p>
+                        국민연금공단에서 제공하는 무료 재무설계 상담으로
+                        체계적인 노후 준비를 도와드립니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 노후준비에 관심 있는 모든 국민<br>
+                        <strong>서비스:</strong> 재무, 건강, 여가, 대인관계 상담<br>
+                        <strong>비용:</strong> 전액 무료<br>
+                        <strong>방법:</strong> 방문, 전화, 온라인 상담
+                    </div>
+                    <a href="https://csa.nps.or.kr/main.do" class="btn-apply">👉노후준비서비스 신청</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>보건복지상담센터:</strong> 국번없이 <a href="tel:129">129</a></p>
+            <p><strong>고용노동부 상담센터:</strong> 국번없이 <a href="tel:1350">1350</a></p>
+            <p><strong>치매상담콜센터:</strong> <a href="tel:1899-9988">1899-9988</a> (24시간)</p>
+            <p><strong>장기요양보험:</strong> <a href="tel:1577-1000">1577-1000</a></p>
+            <p><strong>에너지바우처:</strong> <a href="tel:1600-3190">1600-3190</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>국민건강보험공단:</strong> <a href="https://www.nhis.or.kr/">www.nhis.or.kr</a></p>
+            <p><strong>치매안심센터:</strong> <a href="https://www.edementia.or.kr/">www.edementia.or.kr</a></p>
+            <p><strong>한국노인인력개발원:</strong> <a href="https://www.kordi.or.kr/main.do">www.kordi.or.kr</a> / 노인일자리 상담 <a href="tel:1544-3388">1544-3388</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었으며, 최신 정책 변경사항을 반영하였습니다.<br>
+                ※ <strong>2025년 주요 변경사항:</strong><br>
+                • 기초연금 인상 (단독 최대 34.4만원, 2028년까지 40만원으로 단계적 인상)<br>
+                • 노인일자리 역대 최대 109만 8천개 제공 (예산 2조 1,847억원)<br>
+                • 장기요양보험 수가 3.93% 인상, 요양보호사 인력배치 강화 (2.3:1→2.1:1)<br>
+                • 치매 치료관리비 지원 소득기준 확대 (중위소득 120%→140%)<br>
+                • 노인 평생교육바우처 신설 (연 8,000명, 35만원 지원)<br>
+                • 시니어 친화형 국민체육센터 확대 (8곳→20곳)<br>
+                • 고령자 복지주택 확대 (1,000가구→3,000가구)<br>
+                • 독거노인 응급호출기 30만대 보급<br>
+                ※ 지원 내용 및 신청 방법은 정책별로 상이할 수 있으며, 지자체별 추가 지원이 있을 수 있습니다.<br>
+                ※ 교통 할인 혜택(버스 무료 등)은 지역별로 다르므로 거주지 확인이 필요합니다.<br>
+                ※ 최신 정보는 각 정책의 공식 웹사이트 또는 복지로(www.bokjiro.go.kr), 정부24(www.gov.kr)에서 확인하시기 바랍니다.<br>
+                ※ 모든 링크는 2025년 10월 기준 유효한 공식 사이트입니다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
