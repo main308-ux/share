@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 긴급지원 정부 혜택 - 위기가구 긴급복지지원</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow-x: hidden !important;
+            padding: 40px 0 !important;
+            width: 100% !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #667eea !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #667eea !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #667eea !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .new-badge {
+            display: inline-block !important;
+            background: #ff4757 !important;
+            color: white !important;
+            padding: 3px 8px !important;
+            border-radius: 5px !important;
+            font-size: 0.8rem !important;
+            font-weight: bold !important;
+            margin-left: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+            max-width: 100% !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+            word-break: keep-all !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+            word-break: keep-all !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #ffffff !important;
+            padding: 40px !important;
+            margin: 40px 40px 0 40px !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .footer h3 {
+            color: #667eea !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.4rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+        
+        /* 모바일 최적화 */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            html {
+                overflow-x: hidden !important;
+            }
+            
+            .container {
+                padding: 10px 0 !important;
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+            }
+            
+            .intro {
+                margin: 0 10px 20px 10px !important;
+                padding: 30px 15px !important;
+                border-radius: 15px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .intro h2 {
+                font-size: 1.5rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .intro p {
+                font-size: 1rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .notice {
+                margin: 0 10px 20px 10px !important;
+                padding: 20px 15px !important;
+                border-radius: 12px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .notice h4 {
+                font-size: 1rem !important;
+            }
+            
+            .notice li {
+                font-size: 0.9rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .period-section {
+                margin: 0 10px 20px 10px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .period-title {
+                padding: 15px 15px !important;
+                border-radius: 12px 12px 0 0 !important;
+            }
+            
+            .period-title h3 {
+                font-size: 1.3rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-grid {
+                gap: 15px !important;
+            }
+            
+            .policy-card {
+                padding: 20px 15px !important;
+                border-radius: 12px !important;
+                max-width: 100% !important;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.2rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-card p {
+                font-size: 0.9rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-card .highlight {
+                padding: 10px 12px !important;
+                font-size: 0.85rem !important;
+                word-break: break-all !important;
+                max-width: 100% !important;
+            }
+            
+            .policy-card .highlight strong {
+                word-break: keep-all !important;
+            }
+            
+            .btn-apply {
+                padding: 12px 20px !important;
+                font-size: 0.95rem !important;
+                word-break: keep-all !important;
+                white-space: normal !important;
+            }
+            
+            .footer {
+                margin: 20px 10px 0 10px !important;
+                padding: 25px 15px !important;
+                border-radius: 12px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .footer h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .footer p {
+                font-size: 0.9rem !important;
+                word-break: break-all !important;
+            }
+            
+            .footer a {
+                word-break: break-all !important;
+            }
+            
+            .new-badge {
+                font-size: 0.7rem !important;
+                padding: 2px 6px !important;
+            }
+        }
+        
+        /* 작은 모바일 (360px 이하) */
+        @media (max-width: 360px) {
+            .container {
+                padding: 5px 0 !important;
+            }
+            
+            .intro,
+            .notice,
+            .period-section,
+            .footer {
+                margin-left: 5px !important;
+                margin-right: 5px !important;
+                max-width: calc(100% - 10px) !important;
+            }
+            
+            .intro,
+            .notice,
+            .policy-card,
+            .footer {
+                padding: 15px 10px !important;
+            }
+            
+            .intro h2 {
+                font-size: 1.3rem !important;
+            }
+            
+            .intro p,
+            .notice li,
+            .policy-card p {
+                font-size: 0.85rem !important;
+            }
+            
+            .period-title h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .policy-card .highlight {
+                font-size: 0.8rem !important;
+                padding: 8px 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>🆘 2025 긴급지원 정부 혜택</h2>
+            <p>
+                갑작스런 위기상황, 혼자 견디지 마세요!<br>
+                대한민국 정부가 긴급한 위기에 처한 국민을<br>
+                신속하게 발견하고 지원하여<br>
+                위기상황에서 벗어날 수 있도록<br>
+                생계·의료·주거 등 전방위적으로 돕겠습니다.
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>🚨 2025년 긴급지원 주요 특징</h4>
+            <ul>
+                <li>위기상황 발생 시 선지원 후조사로 신속한 지원 (영업일 7일 이내)</li>
+                <li>기준 중위소득 75% 이하 가구 지원 (4인 가구 기준 월 457만원)</li>
+                <li>생계지원 최대 6개월 지원 (월 73만~248만원)</li>
+                <li>의료지원 300만원 이내 본인부담금 지원</li>
+                <li>주거지원 월 최대 89만원 지원 (대도시 기준)</li>
+                <li>해산비 100만원, 장제비 80만원 별도 지원</li>
+                <li>교육지원 초등 7만원~고등 10만원 (학기당)</li>
+                <li>본인 신청 외 이웃·복지담당 공무원 신고도 가능</li>
+            </ul>
+        </div>
+        
+        <!-- 생계지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💰 생계지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🍚 긴급복지 생계지원<span class="new-badge">24시간</span></h3>
+                    <p>
+                        갑작스런 위기로 생계가 곤란한 가구에
+                        식료품비·의복비 등 생계유지비를 신속하게 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 위기상황으로 생계곤란 가구 (기준 중위소득 75% 이하)<br>
+                        <strong>소득기준:</strong> 1인 179만원, 2인 295만원, 3인 377만원, 4인 457만원<br>
+                        <strong>재산기준:</strong> 대도시 2.41억, 중소도시 1.52억, 농어촌 1.3억 이하<br>
+                        <strong>금융재산:</strong> 1인 839만원, 4인 1,210만원 이하<br>
+                        <strong>지원금액:</strong> 1인 73만원, 2인 120만원, 3인 154만원, 4인 187만원<br>
+                        <strong>지원기간:</strong> 최초 3개월 (심의 통해 3개월 연장, 최대 6개월)<br>
+                        <strong>재지원:</strong> 동일사유 1년 후, 다른사유 6개월 후<br>
+                        <strong>특징:</strong> 선지원 후조사, 영업일 7일 이내 지급
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003180" class="btn-apply">👉긴급생계지원 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🔥 동절기 연료비 지원</h3>
+                    <p>
+                        긴급지원 주급여를 받는 가구를 대상으로
+                        겨울철 난방비를 추가 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 긴급복지 주지원(생계·의료·주거) 받는 가구<br>
+                        <strong>지원기간:</strong> 매년 10월~3월 (6개월)<br>
+                        <strong>지원금액:</strong> 월 11만원/가구<br>
+                        <strong>특징:</strong> 별도 신청 불필요 (주급여 신청 시 자동 지원)
+                    </div>
+                    <a href="https://www.mohw.go.kr/menu.es?mid=a10708010100" class="btn-apply">👉연료비 지원 안내 (보건복지부)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 의료지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏥 의료지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💊 긴급복지 의료지원</h3>
+                    <p>
+                        중한 질병이나 부상으로 거액의 의료비가 발생한 경우
+                        본인부담 의료비를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 중한 질병·부상으로 의료비 부담 위기가구<br>
+                        <strong>지원금액:</strong> 300만원 이내 (1년 2회 한도)<br>
+                        <strong>지원내용:</strong> 입원·수술 시 검사 및 치료비, 본인부담금<br>
+                        <strong>제외항목:</strong> 비급여 항목 중 선택진료비, 상급병실료<br>
+                        <strong>지원방식:</strong> 의료기관에 직접 지급<br>
+                        <strong>주의사항:</strong> 퇴원 후 신청 시 지원 불가<br>
+                        <strong>특징:</strong> 입원 중 신청 필수, 긴급지원담당공무원 확인 필요
+                    </div>
+                    <a href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/135200005004" class="btn-apply">👉긴급의료지원 신청 (정부24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🩺 의료급여 긴급지원</h3>
+                    <p>
+                        긴급복지 의료지원 외에도 의료급여 수급자로
+                        선정되면 지속적인 의료비 지원을 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기준 중위소득 40% 이하 가구<br>
+                        <strong>1종:</strong> 입원 본인부담 없음, 외래 1,000~2,000원<br>
+                        <strong>2종:</strong> 입원 10%, 외래 1,000원+15%<br>
+                        <strong>신청:</strong> 거주지 읍면동 주민센터<br>
+                        <strong>특징:</strong> 긴급지원 후 장기지원제도 연계 가능
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉의료급여 신청 (복지로)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 주거지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏠 주거지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🏘️ 긴급복지 주거지원</h3>
+                    <p>
+                        화재·자연재해 등으로 거주하는 집에서 생활이 곤란하거나
+                        임대료를 3개월 이상 체납한 가구를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 주거 위기상황 가구 (재산 기준 동일)<br>
+                        <strong>금융재산:</strong> 생계지원 기준 + 200만원 (1인 1,039만원)<br>
+                        <strong>지원금액(월):</strong> 1인 33만원, 2인 44만원, 3인 54만원<br>
+                        <strong>대도시:</strong> 4인 62만원, 5인 70만원, 6인 89만원<br>
+                        <strong>지원기간:</strong> 최초 1개월 (연장 2개월, 최대 12개월)<br>
+                        <strong>재지원:</strong> 동일사유 2년 후, 다른사유 3개월 후<br>
+                        <strong>특징:</strong> 임시거소 제공 또는 임대료 지원
+                    </div>
+                    <a href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/135200005005" class="btn-apply">👉긴급주거지원 신청 (정부24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏢 사회복지시설 이용지원</h3>
+                    <p>
+                        노숙 위기 또는 방임·학대 등으로 사회복지시설
+                        이용이 필요한 경우 입소비용을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 복지시설 입소·이용 필요 가구<br>
+                        <strong>지원시설:</strong> 노숙인시설, 한부모가족시설, 성폭력·가정폭력 피해자 보호시설<br>
+                        <strong>지원금액:</strong> 시설운영자에게 입소·이용비용 직접 지급<br>
+                        <strong>지원기간:</strong> 최초 1개월 (연장 2개월, 최대 3개월)<br>
+                        <strong>특징:</strong> 거주 및 생활 서비스 제공
+                    </div>
+                    <a href="https://www.mohw.go.kr/menu.es?mid=a10708010100" class="btn-apply">👉시설이용지원 안내 (보건복지부)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>💸 주거급여 긴급지원</h3>
+                    <p>
+                        긴급주거지원 외에도 주거급여 수급자로 선정되면
+                        지속적인 월세·전세 지원을 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기준 중위소득 48% 이하 가구<br>
+                        <strong>임차:</strong> 1인 33만원~4인 56만원 (지역별 상이)<br>
+                        <strong>자가:</strong> 주택 수선비용 지원 (경보수~대보수)<br>
+                        <strong>신청:</strong> 거주지 읍면동 주민센터<br>
+                        <strong>특징:</strong> 긴급지원 후 장기지원제도 연계 가능
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉주거급여 신청 (복지로)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 기타 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>📚 교육·출산·장례 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🎓 긴급복지 교육지원</h3>
+                    <p>
+                        초·중·고등학생 자녀가 있는 위기가구에
+                        학비와 입학금을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 긴급지원 주급여 받는 가구의 초·중·고생<br>
+                        <strong>초등학생:</strong> 학기당 7만원<br>
+                        <strong>중학생:</strong> 학기당 9만원<br>
+                        <strong>고등학생:</strong> 학기당 10만원<br>
+                        <strong>지원기간:</strong> 학기 단위 (연 2회)<br>
+                        <strong>특징:</strong> 학교장 또는 학생 본인이 신청 가능
+                    </div>
+                    <a href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/135200005006" class="btn-apply">👉교육지원 신청 (정부24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👶 해산비 지원</h3>
+                    <p>
+                        긴급지원 주급여를 받는 가구의 출산 시
+                        해산비를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 긴급복지 주지원 받는 가구의 출산<br>
+                        <strong>지원금액:</strong> 1인당 100만원 (쌍둥이 200만원)<br>
+                        <strong>지원방식:</strong> 현금 지급<br>
+                        <strong>신청기한:</strong> 출산 후 6개월 이내<br>
+                        <strong>특징:</strong> 긴급지원 주급여 신청과 동시 신청 가능
+                    </div>
+                    <a href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/999000000039" class="btn-apply">👉해산비 신청 (정부24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>⚰️ 장제비 지원</h3>
+                    <p>
+                        긴급지원 주급여를 받는 가구의 가족 사망 시
+                        장례비용을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 긴급복지 주지원 받는 가구의 가족 사망<br>
+                        <strong>지원금액:</strong> 1인당 80만원<br>
+                        <strong>지원내용:</strong> 검안, 운반, 화장·매장 등 장례 비용<br>
+                        <strong>지원방식:</strong> 현금 지급<br>
+                        <strong>특징:</strong> 지체 없이 신속 지원
+                    </div>
+                    <a href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/999000000040" class="btn-apply">👉장제비 신청 (정부24)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 위기사유 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🚨 긴급지원 위기사유</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>📋 어떤 경우에 신청할 수 있나요?</h3>
+                    <p>
+                        다음 중 하나에 해당하는 위기상황이 발생한 경우
+                        긴급복지지원을 신청할 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>주요 위기사유:</strong><br>
+                        ① 주소득자 사망·가출·행방불명·구금 등으로 소득 상실<br>
+                        ② 중한 질병 또는 부상<br>
+                        ③ 가족으로부터 방임·유기·학대<br>
+                        ④ 가정폭력 또는 성폭력 피해<br>
+                        ⑤ 화재·자연재해로 거주 곤란<br>
+                        ⑥ 주·부소득자 휴업·폐업·사업장 화재로 영업 곤란<br>
+                        ⑦ 주·부소득자 실직으로 소득 상실<br>
+                        ⑧ 임대료 3개월 이상 체납으로 거주 곤란<br>
+                        ⑨ 단전·단수·단가스 등 공과금 체납<br>
+                        ⑩ 지자체 조례로 정한 위기사유<br>
+                        <br>
+                        <strong>특징:</strong> 본인 신청 외 이웃·친척·공무원·복지담당자 신고 가능
+                    </div>
+                    <a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=90&ccfNo=1&cciNo=1&cnpClsNo=1" class="btn-apply">👉위기사유 상세 안내 (생활법령정보)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📞 신청 및 신고 방법</h3>
+                    <p>
+                        긴급한 위기상황에서는 신속하게 지원받을 수 있도록
+                        다양한 신청·신고 경로를 운영합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>신청방법:</strong><br>
+                        ① 거주지 읍·면·동 주민센터 방문<br>
+                        ② 거주지 시·군·구청 복지과 방문<br>
+                        ③ 보건복지상담센터 129 전화<br>
+                        ④ 복지로 홈페이지 온라인 신청<br>
+                        <br>
+                        <strong>신고자:</strong><br>
+                        • 본인, 친족, 이웃, 민간단체<br>
+                        • 사회복지전담공무원<br>
+                        • 긴급지원 신고의무자 (의료·교육·복지기관 종사자)<br>
+                        <br>
+                        <strong>처리기간:</strong> 영업일 7일 이내 지원<br>
+                        <strong>특징:</strong> 선지원 후조사 (위기상황 신속 대응)
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉온라인 신청 (복지로)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 지자체 추가지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏢 지자체 추가지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🌆 서울형 긴급복지지원</h3>
+                    <p>
+                        서울시는 정부 긴급복지 외에 서울형 긴급복지를 통해
+                        위기가구에 추가 지원을 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 정부 긴급복지 지원을 받지 못하는 서울시민<br>
+                        <strong>소득기준:</strong> 기준 중위소득 85% 이하<br>
+                        <strong>재산기준:</strong> 4억 900만원 이하<br>
+                        <strong>금융재산:</strong> 1,000만원 이하<br>
+                        <strong>지원내용:</strong> 맞춤형 물품 및 현금 지원<br>
+                        <strong>지원횟수:</strong> 1회 (동일 위기 시 1회 추가 가능)<br>
+                        <strong>신청:</strong> 거주지 구청 또는 동주민센터
+                    </div>
+                    <a href="https://news.seoul.go.kr/welfare/archives/48196" class="btn-apply">👉서울형 긴급복지 신청 (서울시)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🌏 지역별 긴급복지</h3>
+                    <p>
+                        각 지자체별로 조례에 따라 추가 긴급복지 지원을
+                        운영하고 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>경기도:</strong> 경기도형 긴급복지지원<br>
+                        <strong>부산시:</strong> 부산형 긴급지원<br>
+                        <strong>대구시:</strong> 대구형 긴급복지<br>
+                        <strong>인천시:</strong> 인천형 긴급지원<br>
+                        <strong>광주시:</strong> 광주형 긴급복지<br>
+                        <strong>대전시:</strong> 대전형 긴급지원<br>
+                        <br>
+                        <strong>특징:</strong> 지역별 기준 및 지원내용 상이<br>
+                        <strong>문의:</strong> 거주지 시·도청 복지정책과
+                    </div>
+                    <a href="https://www.mois.go.kr/" class="btn-apply">👉지역별 긴급복지 안내 (행정안전부)</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>보건복지상담센터:</strong> 국번없이 <a href="tel:129">129</a> (24시간)</p>
+            <p><strong>서울시 다산콜센터:</strong> 국번없이 <a href="tel:120">120</a></p>
+            <p><strong>경찰청 (가정폭력):</strong> <a href="tel:112">112</a></p>
+            <p><strong>여성긴급전화:</strong> <a href="tel:1366">1366</a></p>
+            <p><strong>자살예방상담전화:</strong> <a href="tel:1393">1393</a></p>
+            <p><strong>희망의 전화:</strong> <a href="tel:129">129</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>보건복지부:</strong> <a href="https://www.mohw.go.kr/">www.mohw.go.kr</a></p>
+            <p><strong>생활법령정보:</strong> <a href="https://easylaw.go.kr/">www.easylaw.go.kr</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었습니다.<br>
+                ※ <strong>긴급지원 핵심 원칙:</strong><br>
+                • 선지원 후조사: 위기상황 확인 시 즉시 지원 후 사후조사<br>
+                • 신속성: 신청 후 영업일 7일 이내 지원 결정<br>
+                • 접근성: 본인 외 이웃·친척·공무원 신고 가능<br>
+                • 포괄성: 생계·의료·주거·교육 등 다양한 지원<br>
+                • 연계성: 긴급지원 후 장기지원제도 연계 가능<br>
+                <br>
+                ※ 위기상황은 언제든 발생할 수 있습니다. 주저하지 마시고 즉시 129번으로 연락하시거나 가까운 주민센터를 방문해주세요.<br>
+                ※ 긴급지원은 일시적 지원이며, 이후 국민기초생활보장제도 등 장기지원제도로 연계하여 지속적인 지원을 받을 수 있습니다.<br>
+                ※ 최신 정보는 복지로(www.bokjiro.go.kr) 또는 보건복지상담센터 129에서 확인하시기 바랍니다.<br>
+                <br>
+                <strong>🆘 위기상황에 처했다면 혼자 고민하지 마시고 지금 바로 129로 연락하세요 🆘</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
