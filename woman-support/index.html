@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 여성전용 지원금 혜택 - 여성 맞춤 정부지원</title>
+    <style>
+        .container {
+            max-width: 840px !important;
+            margin: 0 auto !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+            overflow-x: hidden !important;
+            padding: 40px 0 !important;
+            width: 100% !important;
+        }
+        
+        .container * {
+            box-sizing: border-box !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+        .intro {
+            padding: 50px 40px !important;
+            margin: 0 40px 40px 40px !important;
+            background: #ffffff !important;
+            text-align: center !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .intro h2 {
+            font-size: 1.8rem !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+        }
+        
+        .intro p {
+            font-size: 1.1rem !important;
+            color: #666 !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+        }
+        
+        .notice {
+            background: #ffffff !important;
+            padding: 30px !important;
+            margin: 0 40px 40px 40px !important;
+            border-radius: 15px !important;
+            border-left: 5px solid #667eea !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .notice h4 {
+            color: #667eea !important;
+            margin: 0 0 10px 0 !important;
+            padding: 0 !important;
+            font-size: 1.1rem !important;
+        }
+        
+        .notice ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .notice li {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            color: #555 !important;
+        }
+        
+        .notice li::before {
+            content: "✓ " !important;
+            color: #667eea !important;
+            font-weight: bold !important;
+            margin-right: 8px !important;
+        }
+        
+        .new-badge {
+            display: inline-block !important;
+            background: #ff4757 !important;
+            color: white !important;
+            padding: 3px 8px !important;
+            border-radius: 5px !important;
+            font-size: 0.8rem !important;
+            font-weight: bold !important;
+            margin-left: 8px !important;
+        }
+        
+        .period-section {
+            margin: 0 40px 30px 40px !important;
+        }
+        
+        .period-title {
+            background: #ffffff !important;
+            padding: 20px 30px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: 0 0 2px 0 !important;
+        }
+        
+        .period-title h3 {
+            font-size: 1.6rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            color: #667eea !important;
+            font-weight: 600 !important;
+        }
+        
+        .policy-grid {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
+            background: transparent !important;
+        }
+        
+        .policy-card {
+            background: white !important;
+            border: none !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin: 0 !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+            max-width: 100% !important;
+        }
+        
+        .policy-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 4px !important;
+            background: linear-gradient(90deg, #667eea, #764ba2) !important;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+            background: rgba(255, 255, 255, 1) !important;
+            border-radius: 15px !important;
+            z-index: 10 !important;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+            color: #333 !important;
+            font-weight: 600 !important;
+            word-break: keep-all !important;
+        }
+        
+        .policy-card p {
+            color: #666 !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            line-height: 1.8 !important;
+            font-size: 0.95rem !important;
+            word-break: keep-all !important;
+        }
+        
+        .policy-card .highlight {
+            background: #fff3cd !important;
+            padding: 10px 15px !important;
+            margin: 0 0 20px 0 !important;
+            border-radius: 8px !important;
+            border-left: 4px solid #ffc107 !important;
+            font-size: 0.9rem !important;
+            color: #333 !important;
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
+        }
+        
+        .policy-card .highlight strong {
+            color: #e65100 !important;
+        }
+        
+        .btn-apply {
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 1rem !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            text-align: center !important;
+        }
+        
+        .btn-apply:hover,
+        .btn-apply:visited,
+        .btn-apply:active,
+        .btn-apply:focus {
+            color: white !important;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .footer {
+            background: #ffffff !important;
+            padding: 40px !important;
+            margin: 40px 40px 0 40px !important;
+            border-radius: 15px !important;
+            text-align: center !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .footer h3 {
+            color: #667eea !important;
+            margin: 0 0 20px 0 !important;
+            padding: 0 !important;
+            font-size: 1.4rem !important;
+        }
+        
+        .footer p {
+            margin: 10px 0 !important;
+            padding: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .footer a {
+            color: #667eea !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline !important;
+        }
+        
+        /* 모바일 최적화 - 양쪽 여백 최소화 */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            html {
+                overflow-x: hidden !important;
+            }
+            
+            .container {
+                padding: 10px 0 !important;
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+            }
+            
+            .intro {
+                margin: 0 10px 20px 10px !important;
+                padding: 30px 15px !important;
+                border-radius: 15px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .intro h2 {
+                font-size: 1.5rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .intro p {
+                font-size: 1rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .notice {
+                margin: 0 10px 20px 10px !important;
+                padding: 20px 15px !important;
+                border-radius: 12px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .notice h4 {
+                font-size: 1rem !important;
+            }
+            
+            .notice li {
+                font-size: 0.9rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .period-section {
+                margin: 0 10px 20px 10px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .period-title {
+                padding: 15px 15px !important;
+                border-radius: 12px 12px 0 0 !important;
+            }
+            
+            .period-title h3 {
+                font-size: 1.3rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-grid {
+                gap: 15px !important;
+            }
+            
+            .policy-card {
+                padding: 20px 15px !important;
+                border-radius: 12px !important;
+                max-width: 100% !important;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.2rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-card p {
+                font-size: 0.9rem !important;
+                word-break: keep-all !important;
+            }
+            
+            .policy-card .highlight {
+                padding: 10px 12px !important;
+                font-size: 0.85rem !important;
+                word-break: break-all !important;
+                max-width: 100% !important;
+            }
+            
+            .policy-card .highlight strong {
+                word-break: keep-all !important;
+            }
+            
+            .btn-apply {
+                padding: 12px 20px !important;
+                font-size: 0.95rem !important;
+                word-break: keep-all !important;
+                white-space: normal !important;
+            }
+            
+            .footer {
+                margin: 20px 10px 0 10px !important;
+                padding: 25px 15px !important;
+                border-radius: 12px !important;
+                max-width: calc(100% - 20px) !important;
+            }
+            
+            .footer h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .footer p {
+                font-size: 0.9rem !important;
+                word-break: break-all !important;
+            }
+            
+            .footer a {
+                word-break: break-all !important;
+            }
+            
+            .new-badge {
+                font-size: 0.7rem !important;
+                padding: 2px 6px !important;
+            }
+        }
+        
+        /* 작은 모바일 (360px 이하) */
+        @media (max-width: 360px) {
+            .container {
+                padding: 5px 0 !important;
+            }
+            
+            .intro,
+            .notice,
+            .period-section,
+            .footer {
+                margin-left: 5px !important;
+                margin-right: 5px !important;
+                max-width: calc(100% - 10px) !important;
+            }
+            
+            .intro,
+            .notice,
+            .policy-card,
+            .footer {
+                padding: 15px 10px !important;
+            }
+            
+            .intro h2 {
+                font-size: 1.3rem !important;
+            }
+            
+            .intro p,
+            .notice li,
+            .policy-card p {
+                font-size: 0.85rem !important;
+            }
+            
+            .period-title h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .policy-card .highlight {
+                font-size: 0.8rem !important;
+                padding: 8px 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h2>👩 2025 여성전용 지원금 혜택</h2>
+            <p>
+                대한민국 여성의 건강과 행복을 위한<br>
+                정부와 지자체의 맞춤형 지원 정책!<br>
+                한부모·청소년·경력단절·창업 여성 등<br>
+                생애주기별 전방위 지원으로<br>
+                여성의 꿈과 자립을 응원합니다.
+            </p>
+        </div>
+        
+        <div class="notice">
+            <h4>💝 2025년 여성 지원 주요 특징</h4>
+            <ul>
+                <li>한부모가족 아동양육비 월 23만원 지원 (중위소득 63% 이하)</li>
+                <li>여성청소년 생리용품 바우처 월 1만4천원 (만 9~24세)</li>
+                <li>여성건강지원금 최대 505만원 (건강검진·치과·운동)</li>
+                <li>여성 창업 지원금 및 멘토링 프로그램 확대</li>
+                <li>경력단절여성 재취업 지원 (직업훈련·인턴십·구직활동비)</li>
+                <li>산모·신생아 건강관리 바우처 최대 120만원</li>
+                <li>양육비 선지급제 도입 (월 20만원, 중위소득 150% 이하)</li>
+                <li>여성가장 생활안정 및 주거지원 강화</li>
+            </ul>
+        </div>
+        
+        <!-- 한부모 여성가장 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>👩‍👧 한부모 여성가장 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💰 한부모가족 아동양육비<span class="new-badge">인상</span></h3>
+                    <p>
+                        한부모가족의 안정적인 자녀 양육을 위해
+                        아동양육비를 월 23만원으로 인상 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기준 중위소득 63% 이하 한부모가족<br>
+                        <strong>소득기준:</strong> 2인 248만원, 3인 317만원, 4인 384만원<br>
+                        <strong>지원금액:</strong> 18세 미만 자녀 1인당 월 23만원<br>
+                        <strong>추가지원:</strong> 5세 이하 자녀 월 5만원, 청년한부모(25~34세) 월 10만원<br>
+                        <strong>청소년한부모:</strong> 아동양육비 월 37만원 (0~1세 영아 40만원)<br>
+                        <strong>자립촉진수당:</strong> 청소년한부모 월 10만원<br>
+                        <strong>학습지원:</strong> 청소년한부모 검정고시 준비 시 연 154만원<br>
+                        <strong>신청:</strong> 거주지 읍면동 주민센터
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉아동양육비 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏡 양육비 선지급 지원<span class="new-badge">NEW</span></h3>
+                    <p>
+                        양육비를 받지 못하는 한부모가족에게
+                        정부가 양육비를 우선 지급하고 채무자에게 강제 징수합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기준 중위소득 150% 이하 한부모가족<br>
+                        <strong>조건:</strong> 양육비 채권이 있으나 받지 못하는 경우<br>
+                        <strong>지원금액:</strong> 18세 이하 미성년 자녀 1인당 월 20만원<br>
+                        <strong>지원방식:</strong> 정부가 선지급 후 채무자에게 청구<br>
+                        <strong>신청:</strong> 양육비이행관리원<br>
+                        <strong>특징:</strong> 2025년 신설제도
+                    </div>
+                    <a href="https://www.cssf.or.kr/" class="btn-apply">👉양육비 선지급 신청 (양육비이행관리원)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏠 한부모가족 주거지원</h3>
+                    <p>
+                        한부모가족의 안정적인 주거생활을 위해
+                        임대주택 우선 입주 및 전세자금 대출을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>공공임대:</strong> 전용 60㎡ 이하 우선 입주<br>
+                        <strong>전세자금:</strong> 저금리 전세자금 대출 및 이자 지원<br>
+                        <strong>주거급여:</strong> 기준 중위소득 48% 이하 월 33만~56만원<br>
+                        <strong>긴급주거:</strong> 위기 시 긴급 주거지원<br>
+                        <strong>신청:</strong> 거주지 읍면동 주민센터 또는 LH공사
+                    </div>
+                    <a href="https://www.lh.or.kr/" class="btn-apply">👉주거지원 신청 (LH공사)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 여성청소년 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🎀 여성청소년 건강 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🩷 생리용품 바우처<span class="new-badge">확대</span></h3>
+                    <p>
+                        저소득층 여성청소년의 건강한 성장을 위해
+                        생리용품 구매 바우처를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 9~24세 여성청소년<br>
+                        <strong>자격:</strong> 기초생활수급자, 차상위계층, 법정 한부모가족<br>
+                        <strong>지원금액:</strong> 월 14,000원 (연간 최대 168,000원)<br>
+                        <strong>지원방식:</strong> 국민행복카드 바우처 포인트<br>
+                        <strong>구매처:</strong> CU·GS25·세븐일레븐·이마트24, G마켓, 쿠팡 등<br>
+                        <strong>구매품목:</strong> 생리대, 탐폰, 생리컵<br>
+                        <strong>신청:</strong> 복지로 또는 읍면동 주민센터<br>
+                        <strong>특징:</strong> 1회 신청으로 24세까지 자동 지원
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉생리용품 바우처 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🌸 경기도 생리용품 보편지원<span class="new-badge">무료</span></h3>
+                    <p>
+                        경기도는 소득과 관계없이 모든 여성청소년에게
+                        생리용품 구매비용을 지역화폐로 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 경기도 거주 11~18세 여성청소년 (전체)<br>
+                        <strong>소득:</strong> 소득 무관 (보편 지원)<br>
+                        <strong>지원금액:</strong> 월 14,000원 (연간 최대 168,000원)<br>
+                        <strong>지원방식:</strong> 경기지역화폐 (모바일 발급)<br>
+                        <strong>구매처:</strong> 경기지역화폐 가맹 편의점, 배달특급몰<br>
+                        <strong>신청:</strong> 경기민원24 또는 읍면동 주민센터<br>
+                        <strong>특징:</strong> 중복 불가 (여가부 바우처와 선택)
+                    </div>
+                    <a href="https://gg24.gg.go.kr/" class="btn-apply">👉경기도 생리용품 신청 (경기민원24)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 여성 건강 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💊 여성 건강 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🏥 여성건강지원금</h3>
+                    <p>
+                        저소득층 여성가장과 여성활동가의
+                        건강증진을 위한 맞춤형 지원금을 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 저소득층 여성가장, 3년 이상 공익단체 활동 여성<br>
+                        <strong>건강증진비:</strong> 운동프로그램(요가·필라테스) 최대 60만원<br>
+                        <strong>치과진료비:</strong> 충치·임플란트 등 최대 300만원<br>
+                        <strong>건강검진:</strong> 여성질환 검사·종합검진 최대 145만원<br>
+                        <strong>총 지원:</strong> 최대 505만원<br>
+                        <strong>신청:</strong> 여성재단 또는 사회복지단체 추천<br>
+                        <strong>특징:</strong> 바우처·서비스 형태 지원 (현금 X)
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉여성건강지원금 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👶 산모·신생아 건강관리 바우처</h3>
+                    <p>
+                        출산 가정에 건강관리사를 파견하여
+                        산모와 신생아를 돌보는 서비스를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 기준 중위소득 150% 이하 출산 가정<br>
+                        <strong>지원금액:</strong> 태아 수 및 소득에 따라 최소 50만원~최대 120만원<br>
+                        <strong>지원기간:</strong> 최단 5일~최대 40일 (가정 소득·태아 유형별)<br>
+                        <strong>서비스:</strong> 산모 건강관리, 신생아 돌봄, 가사 지원<br>
+                        <strong>신청기간:</strong> 출산 예정일 40일 전~출산일 30일 후<br>
+                        <strong>신청:</strong> 복지로 또는 보건소<br>
+                        <strong>특징:</strong> 다둥이 가정 1:1 비율 최대 4명 지원
+                    </div>
+                    <a href="https://www.bokjiro.go.kr/" class="btn-apply">👉산모건강관리 신청 (복지로)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🩺 국가건강검진 (무료)</h3>
+                    <p>
+                        전 국민 건강검진 및 여성 특화 검진을
+                        무료 또는 저렴하게 받을 수 있습니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>일반검진:</strong> 직장가입자 2년마다, 지역가입자 격년제<br>
+                        <strong>암검진:</strong> 자궁경부암(만20세 이상 2년), 유방암(만40세 이상 2년)<br>
+                        <strong>골다공증:</strong> 만 54·66세 여성 무료<br>
+                        <strong>비용:</strong> 일반검진 무료, 암검진 본인부담 10% (차상위 무료)<br>
+                        <strong>예약:</strong> 국민건강보험공단 또는 검진기관<br>
+                        <strong>문의:</strong> 1577-1000 (건강보험공단)
+                    </div>
+                    <a href="https://www.nhis.or.kr/" class="btn-apply">👉건강검진 예약 (건강보험공단)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 경력단절 여성 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>💼 경력단절 여성 재취업 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🚀 여성새로일하기센터</h3>
+                    <p>
+                        경력단절 여성의 재취업을 위한
+                        직업상담·훈련·인턴십·구직활동비를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 경력단절 및 미취업 여성<br>
+                        <strong>직업상담:</strong> 1:1 맞춤형 진로 상담<br>
+                        <strong>직업훈련:</strong> 취업역량 강화 교육 (IT·서비스·사무 등)<br>
+                        <strong>인턴십:</strong> 기업 인턴 기회 제공<br>
+                        <strong>구직활동비:</strong> 교통비·식비 등 지원<br>
+                        <strong>취업알선:</strong> 일자리 매칭 서비스<br>
+                        <strong>신청:</strong> 전국 새일센터 방문 또는 온라인<br>
+                        <strong>문의:</strong> 1544-1199 (새일센터)
+                    </div>
+                    <a href="https://saeil.mogef.go.kr/" class="btn-apply">👉새일센터 신청 (여성가족부)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>📚 국민내일배움카드</h3>
+                    <p>
+                        경력개발과 재취업을 위한 직업훈련비를
+                        5년간 최대 500만원까지 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 만 15세 이상 국민 (재직자·실업자)<br>
+                        <strong>지원금액:</strong> 5년간 300만원~500만원<br>
+                        <strong>본인부담:</strong> 훈련비의 15~45% (소득에 따라 차등)<br>
+                        <strong>훈련분야:</strong> IT·디자인·마케팅·자격증 등 전 분야<br>
+                        <strong>신청:</strong> 고용센터 또는 HRD-Net<br>
+                        <strong>특징:</strong> 경력단절 여성 재취업·이직 준비 시 유용
+                    </div>
+                    <a href="https://www.hrd.go.kr/" class="btn-apply">👉내일배움카드 신청 (HRD-Net)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 여성 창업 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🏪 여성 창업 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>💡 여성 창업 지원금</h3>
+                    <p>
+                        여성 창업자의 성공적인 사업 시작을 위해
+                        창업자금·교육·멘토링·네트워크를 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 창업 7년 이내 여성 창업자·예비 창업자<br>
+                        <strong>창업자금:</strong> 업종별 차등 지원<br>
+                        <strong>창업교육:</strong> 사업계획·마케팅·재무관리 교육<br>
+                        <strong>멘토링:</strong> 선배 창업가 1:1 멘토링<br>
+                        <strong>네트워크:</strong> 여성 창업가 커뮤니티 지원<br>
+                        <strong>사업장:</strong> 창업보육센터 입주 지원<br>
+                        <strong>신청:</strong> 여성기업종합지원센터<br>
+                        <strong>문의:</strong> 1670-9888 (중소벤처기업부)
+                    </div>
+                    <a href="https://www.wbiz.or.kr/" class="btn-apply">👉여성창업 신청 (여성기업종합지원센터)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏦 여성 소상공인 정책자금</h3>
+                    <p>
+                        여성 소상공인의 경영안정을 위한
+                        저금리 정책자금 대출을 지원합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 여성 소상공인·자영업자<br>
+                        <strong>대출한도:</strong> 업종별 최대 1억원<br>
+                        <strong>금리:</strong> 연 2~3%대 저금리<br>
+                        <strong>대출기간:</strong> 5년 (거치 2년+상환 3년)<br>
+                        <strong>용도:</strong> 시설개선·운영자금·창업자금<br>
+                        <strong>우대금리:</strong> 여성기업 인증 시 추가 우대<br>
+                        <strong>신청:</strong> 소상공인시장진흥공단
+                    </div>
+                    <a href="https://www.semas.or.kr/" class="btn-apply">👉정책자금 신청 (소상공인진흥공단)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🎯 여성기업 공공구매 우대</h3>
+                    <p>
+                        여성기업의 판로확대를 위해
+                        공공기관 구매 시 우대 혜택을 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 여성기업 확인서 발급 기업<br>
+                        <strong>우대혜택:</strong> 공공구매 입찰 시 가점 부여<br>
+                        <strong>구매목표:</strong> 공공기관 중소기업 제품 구매 시 여성기업 제품 우선<br>
+                        <strong>판로지원:</strong> 공공기관·대기업 판로 연결<br>
+                        <strong>신청:</strong> 여성기업확인서 발급 (여성기업종합지원센터)
+                    </div>
+                    <a href="https://www.wbiz.or.kr/" class="btn-apply">👉여성기업확인서 발급 (여성기업종합지원센터)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 기타 여성 지원 -->
+        <div class="period-section">
+            <div class="period-title">
+                <h3>🌟 기타 여성 복지 지원</h3>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>🆘 여성긴급전화 1366</h3>
+                    <p>
+                        가정폭력·성폭력 등 여성 폭력 피해자를 위한
+                        24시간 긴급상담 및 보호지원 서비스입니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>대상:</strong> 폭력 피해 여성 (가정폭력·성폭력·성매매)<br>
+                        <strong>상담:</strong> 24시간 365일 긴급상담<br>
+                        <strong>보호:</strong> 긴급보호시설 연계<br>
+                        <strong>의료:</strong> 의료지원 및 법률상담<br>
+                        <strong>동행:</strong> 경찰·병원·법원 동행 지원<br>
+                        <strong>비용:</strong> 무료<br>
+                        <strong>전화:</strong> 1366 (24시간)<br>
+                        <strong>특징:</strong> 외국인 여성 13개 언어 상담 가능
+                    </div>
+                    <a href="tel:1366" class="btn-apply">👉긴급전화 1366 (24시간)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>👩‍⚕️ 미혼모 지원</h3>
+                    <p>
+                        미혼모의 출산과 양육을 위한
+                        전방위 지원 서비스를 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>임신출산:</strong> 임신·출산 의료비 지원<br>
+                        <strong>양육비:</strong> 한부모가족 아동양육비 (월 23만원)<br>
+                        <strong>청소년미혼모:</strong> 양육비 월 37만원, 자립수당 월 10만원<br>
+                        <strong>주거:</strong> 미혼모자가족 복지시설 입소<br>
+                        <strong>교육:</strong> 학업 병행 지원<br>
+                        <strong>자립:</strong> 직업훈련·취업 지원<br>
+                        <strong>상담:</strong> 129 (보건복지상담센터)
+                    </div>
+                    <a href="https://www.gov.kr/" class="btn-apply">👉미혼모 지원 안내 (정부24)</a>
+                </div>
+                
+                <div class="policy-card">
+                    <h3>🏡 여성 1인가구 지원</h3>
+                    <p>
+                        여성 1인가구의 안전하고 안정적인 생활을 위해
+                        주거·안전·복지 지원을 제공합니다.
+                    </p>
+                    <div class="highlight">
+                        <strong>안전:</strong> 1인가구 안심귀가 서비스<br>
+                        <strong>주거:</strong> 청년·여성 1인가구 임대주택 우선 공급<br>
+                        <strong>월세:</strong> 청년 월세 지원 (월 최대 20만원)<br>
+                        <strong>안전용품:</strong> 현관보조키·문틈차단기 등 무료 배부<br>
+                        <strong>방범:</strong> CCTV 설치 지원<br>
+                        <strong>문의:</strong> 지자체별 1인가구 지원센터
+                    </div>
+                    <a href="https://www.gov.kr/" class="btn-apply">👉1인가구 지원 안내 (정부24)</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 문의 및 상담</h3>
+            <p><strong>여성긴급전화:</strong> <a href="tel:1366">1366</a> (24시간)</p>
+            <p><strong>보건복지상담센터:</strong> <a href="tel:129">129</a></p>
+            <p><strong>새일센터:</strong> <a href="tel:1544-1199">1544-1199</a></p>
+            <p><strong>양육비이행관리원:</strong> <a href="tel:1644-6621">1644-6621</a></p>
+            <p><strong>여성기업종합지원센터:</strong> <a href="tel:1670-9888">1670-9888</a></p>
+            <p><strong>복지로:</strong> <a href="https://www.bokjiro.go.kr/">www.bokjiro.go.kr</a></p>
+            <p><strong>정부24:</strong> <a href="https://www.gov.kr/">www.gov.kr</a></p>
+            <p><strong>여성새로일하기:</strong> <a href="https://saeil.mogef.go.kr/">saeil.mogef.go.kr</a></p>
+            <br>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                ※ 본 정보는 2025년 10월 기준으로 작성되었습니다.<br>
+                ※ <strong>2025년 여성 지원 주요 변경사항:</strong><br>
+                • 한부모가족 아동양육비 인상 (월 21만원→23만원)<br>
+                • 양육비 선지급제 도입 (월 20만원, 중위소득 150% 이하)<br>
+                • 여성청소년 생리용품 바우처 사용처 확대<br>
+                • 경기도 생리용품 보편지원 (소득 무관)<br>
+                • 청소년한부모 자립촉진수당 신설 (월 10만원)<br>
+                • 한부모가족 복지시설 입소 기준 완화<br>
+                • 여성 창업 지원 강화 (멘토링·네트워크 확대)<br>
+                • 경력단절여성 재취업 지원 확대<br>
+                <br>
+                ※ 각 지원 제도별 신청 자격 및 방법이 상이하니 해당 기관 홈페이지 또는 복지로에서 확인하시기 바랍니다.<br>
+                ※ 지자체별 추가 지원 정책이 있을 수 있으니 거주 지역 주민센터에 문의하시기 바랍니다.<br>
+                ※ 최신 정보는 복지로(www.bokjiro.go.kr) 또는 정부24(www.gov.kr)에서 확인하시기 바랍니다.<br>
+                <br>
+                <strong>👩 모든 여성의 건강하고 행복한 삶을 응원합니다 👩</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
